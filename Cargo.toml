@@ -1,0 +1,8 @@
+[package]
+name = "stm32"
+version = "0.0.0"
+authors = ["Robert Ou <rqou@robertou.com>"]
+description = "Unified device support crate for all STM32 microcontrollers (WIP)"
+license = "BSD-2-Clause"
+
+[dependencies]
