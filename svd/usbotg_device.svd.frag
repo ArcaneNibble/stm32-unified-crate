@@ -1,5 +1,4 @@
 <description>USB on the go high speed</description>
-<groupName>USB_OTG_HS</groupName>
 <addressBlock>
   <offset>0x0</offset>
   <size>0x400</size>

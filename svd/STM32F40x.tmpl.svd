@@ -8549,38 +8549,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <registers>
-        <register>
-          <name>FS_PCGCCTL</name>
-          <displayName>FS_PCGCCTL</displayName>
-          <description>OTG_FS power and clock gating control
-          register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>STPPCLK</name>
-              <description>Stop PHY clock</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GATEHCLK</name>
-              <description>Gate HCLK</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PHYSUSP</name>
-              <description>PHY Suspended</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
+#include "usbotg_pwrclk.svd.frag"
     </peripheral>
     <peripheral>
       <name>CAN1</name>
@@ -8689,6 +8658,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     </peripheral>
     <peripheral>
       <name>OTG_HS_GLOBAL</name>
+      <groupName>USB_OTG_HS</groupName>
       <baseAddress>0x40040000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
@@ -8728,16 +8698,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     </peripheral>
     <peripheral>
       <name>OTG_HS_HOST</name>
+      <groupName>USB_OTG_HS</groupName>
       <baseAddress>0x40040400</baseAddress>
 #include "usbotg_host.svd.frag"
     </peripheral>
     <peripheral>
       <name>OTG_HS_DEVICE</name>
+      <groupName>USB_OTG_HS</groupName>
       <baseAddress>0x40040800</baseAddress>
 #include "usbotg_device.svd.frag"
     </peripheral>
     <peripheral>
       <name>OTG_HS_PWRCLK</name>
+      <groupName>USB_OTG_HS</groupName>
       <baseAddress>0x40040E00</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
@@ -8749,6 +8722,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0xFFFC1200</size>
         <usage>reserved</usage>
       </addressBlock>
+#define __USBOTG_HS
 #include "usbotg_pwrclk.svd.frag"
     </peripheral>
     <peripheral>

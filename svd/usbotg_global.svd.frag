@@ -1,5 +1,4 @@
 <description>USB on the go high speed</description>
-<groupName>USB_OTG_HS</groupName>
 <registers>
   <register>
     <name>OTG_HS_GOTGCTL</name>

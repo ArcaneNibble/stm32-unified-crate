@@ -1,9 +1,8 @@
 <description>USB on the go high speed</description>
-<groupName>USB_OTG_HS</groupName>
 <registers>
   <register>
-    <name>OTG_HS_PCGCR</name>
-    <displayName>OTG_HS_PCGCR</displayName>
+    <name>PCGCR</name>
+    <displayName>PCGCR</displayName>
     <description>Power and clock gating control
     register</description>
     <addressOffset>0x0</addressOffset>
@@ -32,3 +31,4 @@
     </fields>
   </register>
 </registers>
+#undef __USBOTG_HS
