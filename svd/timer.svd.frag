@@ -6,6 +6,16 @@
 #define __TIMER_WIDTH16
 #endif
 
+#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#define __TIMER_NUM_CCR 4
+#elif defined(__TIMER_GP_WITH_SYNC)
+#define __TIMER_NUM_CCR 2
+#elif defined(__TIMER_GP)
+#define __TIMER_NUM_CCR 1
+#else
+#define __TIMER_NUM_CCR 0
+#endif
+
 <groupName>TIM</groupName>
 <addressBlock>
   <offset>0x0</offset>
@@ -13,6 +23,7 @@
   <usage>registers</usage>
 </addressBlock>
 <registers>
+
   <register>
     <name>CR1</name>
     <displayName>CR1</displayName>
@@ -79,6 +90,7 @@
       </field>
     </fields>
   </register>
+
 #if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC) || defined(__TIMER_BASIC)
   <register>
     <name>CR2</name>
@@ -174,6 +186,7 @@
 #endif
     </fields>
   </register>
+
 #ifndef __TIMER_BASIC
   <register>
     <name>SMCR</name>
@@ -232,6 +245,7 @@
   </register>
 #endif
 #endif
+
   <register>
     <name>DIER</name>
     <displayName>DIER</displayName>
@@ -301,7 +315,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#if __TIMER_NUM_CCR >= 4
       <field>
         <name>CC4IE</name>
         <description>Capture/Compare 4 interrupt
@@ -309,6 +323,8 @@
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#if __TIMER_NUM_CCR >= 3
       <field>
         <name>CC3IE</name>
         <description>Capture/Compare 3 interrupt
@@ -317,7 +333,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
       <field>
         <name>CC2IE</name>
         <description>Capture/Compare 2 interrupt
@@ -326,7 +342,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#ifndef __TIMER_BASIC
+#if __TIMER_NUM_CCR >= 1
       <field>
         <name>CC1IE</name>
         <description>Capture/Compare 1 interrupt
@@ -357,6 +373,7 @@
 #endif
     </fields>
   </register>
+
   <register>
     <name>SR</name>
     <displayName>SR</displayName>
@@ -366,7 +383,7 @@
     <access>read-write</access>
     <resetValue>0x0000</resetValue>
     <fields>
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#if __TIMER_NUM_CCR >= 4
       <field>
         <name>CC4OF</name>
         <description>Capture/Compare 4 overcapture
@@ -374,6 +391,8 @@
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#if __TIMER_NUM_CCR >= 3
       <field>
         <name>CC3OF</name>
         <description>Capture/Compare 3 overcapture
@@ -382,7 +401,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
       <field>
         <name>CC2OF</name>
         <description>Capture/compare 2 overcapture
@@ -391,7 +410,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#ifndef __TIMER_BASIC
+#if __TIMER_NUM_CCR >= 1
       <field>
         <name>CC1OF</name>
         <description>Capture/Compare 1 overcapture
@@ -424,7 +443,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#if __TIMER_NUM_CCR >= 4
       <field>
         <name>CC4IF</name>
         <description>Capture/Compare 4 interrupt
@@ -432,6 +451,8 @@
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#if __TIMER_NUM_CCR >= 3
       <field>
         <name>CC3IF</name>
         <description>Capture/Compare 3 interrupt
@@ -440,7 +461,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
       <field>
         <name>CC2IF</name>
         <description>Capture/Compare 2 interrupt
@@ -449,7 +470,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#ifndef __TIMER_BASIC
+#if __TIMER_NUM_CCR >= 1
       <field>
         <name>CC1IF</name>
         <description>Capture/compare 1 interrupt
@@ -466,6 +487,7 @@
       </field>
     </fields>
   </register>
+
   <register>
     <name>EGR</name>
     <displayName>EGR</displayName>
@@ -500,7 +522,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#if __TIMER_NUM_CCR >= 4
       <field>
         <name>CC4G</name>
         <description>Capture/compare 4
@@ -508,6 +530,8 @@
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#if __TIMER_NUM_CCR >= 3
       <field>
         <name>CC3G</name>
         <description>Capture/compare 3
@@ -516,7 +540,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
       <field>
         <name>CC2G</name>
         <description>Capture/compare 2
@@ -525,7 +549,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#ifndef __TIMER_BASIC
+#if __TIMER_NUM_CCR >= 1
       <field>
         <name>CC1G</name>
         <description>Capture/compare 1
@@ -542,7 +566,8 @@
       </field>
     </fields>
   </register>
-#ifndef __TIMER_BASIC
+
+#if __TIMER_NUM_CCR >= 1
   <register>
     <name>CCMR1_Output</name>
     <displayName>CCMR1_Output</displayName>
@@ -553,6 +578,7 @@
     <access>read-write</access>
     <resetValue>0x00000000</resetValue>
     <fields>
+#if __TIMER_NUM_CCR >= 2
 #if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
       <field>
         <name>OC2CE</name>
@@ -562,7 +588,6 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
       <field>
         <name>OC2M</name>
         <description>Output Compare 2 mode</description>
@@ -641,7 +666,7 @@
     <resetValue>0x00000000</resetValue>
     <fields>
       <!-- TODO XXX: There is a mismatch between the SVD and datasheet -->
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
       <field>
         <name>IC2F</name>
         <description>Input capture 2 filter</description>
@@ -683,7 +708,8 @@
       </field>
     </fields>
   </register>
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#endif
+#if __TIMER_NUM_CCR >= 3
   <register>
     <name>CCMR2_Output</name>
     <displayName>CCMR2_Output</displayName>
@@ -694,6 +720,7 @@
     <access>read-write</access>
     <resetValue>0x00000000</resetValue>
     <fields>
+#if __TIMER_NUM_CCR >= 4
       <field>
         <name>OC4CE</name>
         <description>Output compare 4 clear
@@ -728,6 +755,7 @@
         <bitOffset>8</bitOffset>
         <bitWidth>2</bitWidth>
       </field>
+#endif
       <field>
         <name>OC3CE</name>
         <description>Output compare 3 clear
@@ -775,6 +803,7 @@
     <access>read-write</access>
     <resetValue>0x00000000</resetValue>
     <fields>
+#if __TIMER_NUM_CCR >= 4
       <field>
         <name>IC4F</name>
         <description>Input capture 4 filter</description>
@@ -794,6 +823,7 @@
         <bitOffset>8</bitOffset>
         <bitWidth>2</bitWidth>
       </field>
+#endif
       <field>
         <name>IC3F</name>
         <description>Input capture 3 filter</description>
@@ -816,6 +846,8 @@
     </fields>
   </register>
 #endif
+
+#if __TIMER_NUM_CCR > 0
   <register>
     <name>CCER</name>
     <displayName>CCER</displayName>
@@ -826,7 +858,7 @@
     <access>read-write</access>
     <resetValue>0x0000</resetValue>
     <fields>
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#if __TIMER_NUM_CCR >= 4
 #ifndef __TIMER_ADVANCED
       <field>
         <name>CC4NP</name>
@@ -850,6 +882,8 @@
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#if __TIMER_NUM_CCR >= 3
       <field>
         <name>CC3NP</name>
         <description>Capture/Compare 3 output
@@ -881,7 +915,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
       <field>
         <name>CC2NP</name>
         <description>Capture/Compare 2 output
@@ -913,6 +947,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
+#if __TIMER_NUM_CCR >= 1
       <field>
         <name>CC1NP</name>
         <description>Capture/Compare 1 output
@@ -943,9 +978,11 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
     </fields>
   </register>
 #endif
+
   <register>
     <name>CNT</name>
     <displayName>CNT</displayName>
@@ -978,6 +1015,7 @@
 #endif
     </fields>
   </register>
+
   <register>
     <name>PSC</name>
     <displayName>PSC</displayName>
@@ -995,6 +1033,7 @@
       </field>
     </fields>
   </register>
+
   <register>
     <name>ARR</name>
     <displayName>ARR</displayName>
@@ -1027,7 +1066,8 @@
 #endif
     </fields>
   </register>
-#ifndef __TIMER_BASIC
+
+#if __TIMER_NUM_CCR >= 1
   <register>
     <name>CCR1</name>
     <displayName>CCR1</displayName>
@@ -1063,7 +1103,7 @@
     </fields>
   </register>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG) || defined(__TIMER_GP_WITH_SYNC)
+#if __TIMER_NUM_CCR >= 2
   <register>
     <name>CCR2</name>
     <displayName>CCR2</displayName>
@@ -1099,7 +1139,7 @@
     </fields>
   </register>
 #endif
-#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
+#if __TIMER_NUM_CCR >= 3
   <register>
     <name>CCR3</name>
     <displayName>CCR3</displayName>
@@ -1132,6 +1172,8 @@
 #endif
     </fields>
   </register>
+#endif
+#if __TIMER_NUM_CCR >= 4
   <register>
     <name>CCR4</name>
     <displayName>CCR4</displayName>
@@ -1164,6 +1206,9 @@
 #endif
     </fields>
   </register>
+#endif
+
+#if defined(__TIMER_ADVANCED) || defined(__TIMER_GP_WITH_TRIG)
   <register>
     <name>DCR</name>
     <displayName>DCR</displayName>
@@ -1187,6 +1232,7 @@
       </field>
     </fields>
   </register>
+
   <register>
     <name>DMAR</name>
     <displayName>DMAR</displayName>
@@ -1206,6 +1252,7 @@
     </fields>
   </register>
 #endif
+
 #ifdef __TIMER_ADVANCED
   <register>
     <name>RCR</name>
@@ -1286,6 +1333,7 @@
     </fields>
   </register>
 #endif
+
 #ifdef __TIMER_TIM2
   <register>
     <name>OR</name>
@@ -1354,3 +1402,4 @@
 #undef __TIMER_TIM5
 #undef __TIMER_TIM11
 #undef __TIMER_WIDTH16
+#undef __TIMER_NUM_CCR
