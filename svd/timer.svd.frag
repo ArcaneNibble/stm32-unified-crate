@@ -68,6 +68,18 @@
         <description>One-pulse mode</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <enumeratedValue>
+            <name>Continuous</name>
+            <description>Counter is not stopped at update event</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>OnePulse</name>
+            <description>Counter stops counting at the next update event (clearing the CEN bit)</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
 #endif
       <field>
@@ -87,6 +99,18 @@
         <description>Counter enable</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <enumeratedValue>
+            <name>Disabled</name>
+            <description>Counter disabled</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>Enabled</name>
+            <description>Counter enabled</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -484,6 +508,27 @@
         <description>Update interrupt flag</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <usage>read</usage>
+          <enumeratedValue>
+            <name>NoUpdate</name>
+            <description>No update occurred</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>Pending</name>
+            <description>Update interrupt pending</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
+        <enumeratedValues>
+          <usage>write</usage>
+          <enumeratedValue>
+            <name>Clear</name>
+            <description>Clears the update interrupt flag</description>
+            <value>0</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1030,6 +1075,12 @@
         <description>Prescaler value</description>
         <bitOffset>0</bitOffset>
         <bitWidth>16</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>65535</maximum>
+          </range>
+        </writeConstraint>
       </field>
     </fields>
   </register>
@@ -1049,6 +1100,12 @@
         <description>Auto-reload value</description>
         <bitOffset>0</bitOffset>
         <bitWidth>16</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>65535</maximum>
+          </range>
+        </writeConstraint>
       </field>
 #else
       <field>
@@ -1056,12 +1113,24 @@
         <description>High Auto-reload value</description>
         <bitOffset>16</bitOffset>
         <bitWidth>16</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>65535</maximum>
+          </range>
+        </writeConstraint>
       </field>
       <field>
         <name>ARR_L</name>
         <description>Low Auto-reload value</description>
         <bitOffset>0</bitOffset>
         <bitWidth>16</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>65535</maximum>
+          </range>
+        </writeConstraint>
       </field>
 #endif
     </fields>

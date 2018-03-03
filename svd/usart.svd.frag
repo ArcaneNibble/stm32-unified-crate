@@ -105,6 +105,12 @@ transmitter</description>
         <description>Data value</description>
         <bitOffset>0</bitOffset>
         <bitWidth>9</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>511</maximum>
+          </range>
+        </writeConstraint>
       </field>
     </fields>
   </register>
