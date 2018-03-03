@@ -18,8 +18,26 @@
         <name>MEM_MODE</name>
         <description>MEM_MODE</description>
         <bitOffset>0</bitOffset>
+#ifdef __HAVE_FMC
+        <bitWidth>3</bitWidth>
+#else
+        <bitWidth>2</bitWidth>
+#endif
+      </field>
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
+      <field>
+        <name>FB_MODE</name>
+        <description>Flash bank mode selection</description>
+        <bitOffset>8</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>SWP_FMC</name>
+        <description>FMC memory mapping swap</description>
+        <bitOffset>10</bitOffset>
         <bitWidth>2</bitWidth>
       </field>
+#endif
     </fields>
   </register>
   <register>
@@ -41,7 +59,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>ADC1DC2</name>
         <description>ADC1DC2</description>

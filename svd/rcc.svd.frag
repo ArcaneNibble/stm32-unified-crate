@@ -537,6 +537,32 @@
         <bitWidth>1</bitWidth>
         <access>read-only</access>
       </field>
+#ifdef __HAVE_SAI
+      <field>
+        <name>PLLSAIRDYC</name>
+        <description>PLLSAI Ready Interrupt
+        Clear</description>
+        <bitOffset>22</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>write-only</access>
+      </field>
+      <field>
+        <name>PLLSAIRDYIE</name>
+        <description>PLLSAI Ready Interrupt
+        Enable</description>
+        <bitOffset>14</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>read-write</access>
+      </field>
+      <field>
+        <name>PLLSAIRDYF</name>
+        <description>PLLSAI ready interrupt
+        flag</description>
+        <bitOffset>6</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>read-only</access>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -858,7 +884,7 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>UART7RST</name>
         <description>UART7 reset</description>
@@ -951,7 +977,7 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>SPI4RST</name>
         <description>SPI4 reset</description>
@@ -968,6 +994,14 @@
         <name>SPI6RST</name>
         <description>SPI6 reset</description>
         <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
+#ifdef __HAVE_SAI
+      <field>
+        <name>SAI1RST</name>
+        <description>SAI1 reset</description>
+        <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
 #endif
@@ -1058,6 +1092,14 @@
         <name>DMA1EN</name>
         <description>DMA1 clock enable</description>
         <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>CCMDATARAMEN</name>
+        <description>CCM data RAM clock enable</description>
+        <bitOffset>20</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="ENABLED">
         </enumeratedValues>
@@ -1441,7 +1483,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>UART7ENR</name>
         <description>UART7 clock enable</description>
@@ -1576,7 +1618,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>SPI4ENR</name>
         <description>SPI4 clock enable</description>
@@ -1597,6 +1639,16 @@
         <name>SPI6ENR</name>
         <description>SPI6 clock enable</description>
         <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
+#ifdef __HAVE_SAI
+      <field>
+        <name>SAI1EN</name>
+        <description>SAI1 clock enable</description>
+        <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
@@ -2128,7 +2180,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>UART7LPEN</name>
         <description>UART7 clock enable during Sleep
@@ -2277,7 +2329,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>SPI4LPEN</name>
         <description>SPI 4 clock enable during Sleep
@@ -2301,6 +2353,16 @@
         <description>SPI 6 clock enable during Sleep
         mode</description>
         <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
+#ifdef __HAVE_SAI
+      <field>
+        <name>SAI1LPEN</name>
+        <description>SAI1 clock enable</description>
+        <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
@@ -2508,6 +2570,15 @@
         <bitOffset>28</bitOffset>
         <bitWidth>3</bitWidth>
       </field>
+#ifdef __HAVE_SAI
+      <field>
+        <name>PLLI2SQx</name>
+        <description>PLLI2S division factor for SAI1
+        clocks</description>
+        <bitOffset>24</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+#endif
       <field>
         <name>PLLI2SNx</name>
         <description>PLLI2S multiplication factor for
@@ -2517,7 +2588,7 @@
       </field>
     </fields>
   </register>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
   <register>
     <name>PLLSAICFGR</name>
     <displayName>PLLSAICFGR</displayName>

@@ -174,7 +174,7 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
       <field>
         <name>MER</name>
         <description>Mass Erase of sectors 0 to 11</description>
@@ -301,7 +301,7 @@
       </field>
     </fields>
   </register>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
   <register>
     <name>OPTCR1</name>
     <displayName>OPTCR1</displayName>

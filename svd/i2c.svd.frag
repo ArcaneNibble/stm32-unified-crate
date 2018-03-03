@@ -452,7 +452,7 @@
       </field>
     </fields>
   </register>
-#if defined(STM32F427) || defined(STM32F437)
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
   <register>
     <name>FLTR</name>
     <displayName>FLTR</displayName>
