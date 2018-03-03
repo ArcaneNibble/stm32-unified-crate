@@ -554,12 +554,14 @@
         <bitOffset>29</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __HAVE_ETHERNET
       <field>
         <name>ETHMACRST</name>
         <description>Ethernet MAC reset</description>
         <bitOffset>25</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>DMA2RST</name>
         <description>DMA2 reset</description>
@@ -656,12 +658,14 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __HAVE_DCMI
       <field>
         <name>DCMIRST</name>
         <description>Camera interface reset</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
     </fields>
   </register>
   <register>
@@ -947,6 +951,7 @@
         <enumeratedValues derivedFrom="ENABLED">
         </enumeratedValues>
       </field>
+#ifdef __HAVE_ETHERNET
       <field>
         <name>ETHMACPTPEN</name>
         <description>Ethernet PTP clock enable</description>
@@ -981,6 +986,7 @@
         <enumeratedValues derivedFrom="ENABLED">
         </enumeratedValues>
       </field>
+#endif
       <field>
         <name>DMA2EN</name>
         <description>DMA2 clock enable</description>
@@ -1115,6 +1121,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#ifdef __HAVE_DCMI
       <field>
         <name>DCMIEN</name>
         <description>Camera interface enable</description>
@@ -1123,6 +1130,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1489,6 +1497,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#ifdef __HAVE_ETHERNET
       <field>
         <name>ETHMACPTPLPEN</name>
         <description>Ethernet PTP clock enable during Sleep
@@ -1525,6 +1534,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#endif
       <field>
         <name>DMA2LPEN</name>
         <description>DMA2 clock enable during Sleep
@@ -1699,6 +1709,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#ifdef __HAVE_DCMI
       <field>
         <name>DCMILPEN</name>
         <description>Camera interface enable during Sleep
@@ -1708,6 +1719,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#endif
     </fields>
   </register>
   <register>
