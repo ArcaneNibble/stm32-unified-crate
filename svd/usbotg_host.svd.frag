@@ -1,4 +1,8 @@
+#ifdef __USBOTG_HS
 <description>USB on the go high speed</description>
+#else
+<description>USB on the go full speed</description>
+#endif
 <addressBlock>
   <offset>0x0</offset>
   <size>0x400</size>
@@ -6,9 +10,9 @@
 </addressBlock>
 <registers>
   <register>
-    <name>OTG_HS_HCFG</name>
-    <displayName>OTG_HS_HCFG</displayName>
-    <description>OTG_HS host configuration
+    <name>HCFG</name>
+    <displayName>HCFG</displayName>
+    <description>OTG host configuration
     register</description>
     <addressOffset>0x0</addressOffset>
     <size>32</size>
@@ -31,9 +35,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HFIR</name>
-    <displayName>OTG_HS_HFIR</displayName>
-    <description>OTG_HS Host frame interval
+    <name>HFIR</name>
+    <displayName>HFIR</displayName>
+    <description>OTG Host frame interval
     register</description>
     <addressOffset>0x4</addressOffset>
     <size>32</size>
@@ -49,9 +53,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HFNUM</name>
-    <displayName>OTG_HS_HFNUM</displayName>
-    <description>OTG_HS host frame number/frame time
+    <name>HFNUM</name>
+    <displayName>HFNUM</displayName>
+    <description>OTG host frame number/frame time
     remaining register</description>
     <addressOffset>0x8</addressOffset>
     <size>32</size>
@@ -73,9 +77,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HPTXSTS</name>
-    <displayName>OTG_HS_HPTXSTS</displayName>
-    <description>OTG_HS_Host periodic transmit FIFO/queue
+    <name>HPTXSTS</name>
+    <displayName>HPTXSTS</displayName>
+    <description>Host periodic transmit FIFO/queue
     status register</description>
     <addressOffset>0x10</addressOffset>
     <size>32</size>
@@ -108,9 +112,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HAINT</name>
-    <displayName>OTG_HS_HAINT</displayName>
-    <description>OTG_HS Host all channels interrupt
+    <name>HAINT</name>
+    <displayName>HAINT</displayName>
+    <description>OTG Host all channels interrupt
     register</description>
     <addressOffset>0x14</addressOffset>
     <size>32</size>
@@ -126,9 +130,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HAINTMSK</name>
-    <displayName>OTG_HS_HAINTMSK</displayName>
-    <description>OTG_HS host all channels interrupt mask
+    <name>HAINTMSK</name>
+    <displayName>HAINTMSK</displayName>
+    <description>OTG host all channels interrupt mask
     register</description>
     <addressOffset>0x18</addressOffset>
     <size>32</size>
@@ -144,9 +148,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HPRT</name>
-    <displayName>OTG_HS_HPRT</displayName>
-    <description>OTG_HS host port control and status
+    <name>HPRT</name>
+    <displayName>HPRT</displayName>
+    <description>OTG host port control and status
     register</description>
     <addressOffset>0x40</addressOffset>
     <size>32</size>
@@ -246,9 +250,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR0</name>
-    <displayName>OTG_HS_HCCHAR0</displayName>
-    <description>OTG_HS host channel-0 characteristics
+    <name>HCCHAR0</name>
+    <displayName>HCCHAR0</displayName>
+    <description>OTG host channel-0 characteristics
     register</description>
     <addressOffset>0x100</addressOffset>
     <size>32</size>
@@ -319,9 +323,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR1</name>
-    <displayName>OTG_HS_HCCHAR1</displayName>
-    <description>OTG_HS host channel-1 characteristics
+    <name>HCCHAR1</name>
+    <displayName>HCCHAR1</displayName>
+    <description>OTG host channel-1 characteristics
     register</description>
     <addressOffset>0x120</addressOffset>
     <size>32</size>
@@ -392,9 +396,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR2</name>
-    <displayName>OTG_HS_HCCHAR2</displayName>
-    <description>OTG_HS host channel-2 characteristics
+    <name>HCCHAR2</name>
+    <displayName>HCCHAR2</displayName>
+    <description>OTG host channel-2 characteristics
     register</description>
     <addressOffset>0x140</addressOffset>
     <size>32</size>
@@ -465,9 +469,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR3</name>
-    <displayName>OTG_HS_HCCHAR3</displayName>
-    <description>OTG_HS host channel-3 characteristics
+    <name>HCCHAR3</name>
+    <displayName>HCCHAR3</displayName>
+    <description>OTG host channel-3 characteristics
     register</description>
     <addressOffset>0x160</addressOffset>
     <size>32</size>
@@ -538,9 +542,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR4</name>
-    <displayName>OTG_HS_HCCHAR4</displayName>
-    <description>OTG_HS host channel-4 characteristics
+    <name>HCCHAR4</name>
+    <displayName>HCCHAR4</displayName>
+    <description>OTG host channel-4 characteristics
     register</description>
     <addressOffset>0x180</addressOffset>
     <size>32</size>
@@ -611,9 +615,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR5</name>
-    <displayName>OTG_HS_HCCHAR5</displayName>
-    <description>OTG_HS host channel-5 characteristics
+    <name>HCCHAR5</name>
+    <displayName>HCCHAR5</displayName>
+    <description>OTG host channel-5 characteristics
     register</description>
     <addressOffset>0x1A0</addressOffset>
     <size>32</size>
@@ -684,9 +688,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR6</name>
-    <displayName>OTG_HS_HCCHAR6</displayName>
-    <description>OTG_HS host channel-6 characteristics
+    <name>HCCHAR6</name>
+    <displayName>HCCHAR6</displayName>
+    <description>OTG host channel-6 characteristics
     register</description>
     <addressOffset>0x1C0</addressOffset>
     <size>32</size>
@@ -757,9 +761,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR7</name>
-    <displayName>OTG_HS_HCCHAR7</displayName>
-    <description>OTG_HS host channel-7 characteristics
+    <name>HCCHAR7</name>
+    <displayName>HCCHAR7</displayName>
+    <description>OTG host channel-7 characteristics
     register</description>
     <addressOffset>0x1E0</addressOffset>
     <size>32</size>
@@ -829,10 +833,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_HCCHAR8</name>
-    <displayName>OTG_HS_HCCHAR8</displayName>
-    <description>OTG_HS host channel-8 characteristics
+    <name>HCCHAR8</name>
+    <displayName>HCCHAR8</displayName>
+    <description>OTG host channel-8 characteristics
     register</description>
     <addressOffset>0x200</addressOffset>
     <size>32</size>
@@ -903,9 +908,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR9</name>
-    <displayName>OTG_HS_HCCHAR9</displayName>
-    <description>OTG_HS host channel-9 characteristics
+    <name>HCCHAR9</name>
+    <displayName>HCCHAR9</displayName>
+    <description>OTG host channel-9 characteristics
     register</description>
     <addressOffset>0x220</addressOffset>
     <size>32</size>
@@ -976,9 +981,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR10</name>
-    <displayName>OTG_HS_HCCHAR10</displayName>
-    <description>OTG_HS host channel-10 characteristics
+    <name>HCCHAR10</name>
+    <displayName>HCCHAR10</displayName>
+    <description>OTG host channel-10 characteristics
     register</description>
     <addressOffset>0x240</addressOffset>
     <size>32</size>
@@ -1049,9 +1054,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCCHAR11</name>
-    <displayName>OTG_HS_HCCHAR11</displayName>
-    <description>OTG_HS host channel-11 characteristics
+    <name>HCCHAR11</name>
+    <displayName>HCCHAR11</displayName>
+    <description>OTG host channel-11 characteristics
     register</description>
     <addressOffset>0x260</addressOffset>
     <size>32</size>
@@ -1121,10 +1126,12 @@
       </field>
     </fields>
   </register>
+#endif
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_HCSPLT0</name>
-    <displayName>OTG_HS_HCSPLT0</displayName>
-    <description>OTG_HS host channel-0 split control
+    <name>HCSPLT0</name>
+    <displayName>HCSPLT0</displayName>
+    <description>OTG host channel-0 split control
     register</description>
     <addressOffset>0x104</addressOffset>
     <size>32</size>
@@ -1164,9 +1171,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT1</name>
-    <displayName>OTG_HS_HCSPLT1</displayName>
-    <description>OTG_HS host channel-1 split control
+    <name>HCSPLT1</name>
+    <displayName>HCSPLT1</displayName>
+    <description>OTG host channel-1 split control
     register</description>
     <addressOffset>0x124</addressOffset>
     <size>32</size>
@@ -1206,9 +1213,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT2</name>
-    <displayName>OTG_HS_HCSPLT2</displayName>
-    <description>OTG_HS host channel-2 split control
+    <name>HCSPLT2</name>
+    <displayName>HCSPLT2</displayName>
+    <description>OTG host channel-2 split control
     register</description>
     <addressOffset>0x144</addressOffset>
     <size>32</size>
@@ -1248,9 +1255,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT3</name>
-    <displayName>OTG_HS_HCSPLT3</displayName>
-    <description>OTG_HS host channel-3 split control
+    <name>HCSPLT3</name>
+    <displayName>HCSPLT3</displayName>
+    <description>OTG host channel-3 split control
     register</description>
     <addressOffset>0x164</addressOffset>
     <size>32</size>
@@ -1290,9 +1297,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT4</name>
-    <displayName>OTG_HS_HCSPLT4</displayName>
-    <description>OTG_HS host channel-4 split control
+    <name>HCSPLT4</name>
+    <displayName>HCSPLT4</displayName>
+    <description>OTG host channel-4 split control
     register</description>
     <addressOffset>0x184</addressOffset>
     <size>32</size>
@@ -1332,9 +1339,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT5</name>
-    <displayName>OTG_HS_HCSPLT5</displayName>
-    <description>OTG_HS host channel-5 split control
+    <name>HCSPLT5</name>
+    <displayName>HCSPLT5</displayName>
+    <description>OTG host channel-5 split control
     register</description>
     <addressOffset>0x1A4</addressOffset>
     <size>32</size>
@@ -1374,9 +1381,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT6</name>
-    <displayName>OTG_HS_HCSPLT6</displayName>
-    <description>OTG_HS host channel-6 split control
+    <name>HCSPLT6</name>
+    <displayName>HCSPLT6</displayName>
+    <description>OTG host channel-6 split control
     register</description>
     <addressOffset>0x1C4</addressOffset>
     <size>32</size>
@@ -1416,9 +1423,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT7</name>
-    <displayName>OTG_HS_HCSPLT7</displayName>
-    <description>OTG_HS host channel-7 split control
+    <name>HCSPLT7</name>
+    <displayName>HCSPLT7</displayName>
+    <description>OTG host channel-7 split control
     register</description>
     <addressOffset>0x1E4</addressOffset>
     <size>32</size>
@@ -1458,9 +1465,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT8</name>
-    <displayName>OTG_HS_HCSPLT8</displayName>
-    <description>OTG_HS host channel-8 split control
+    <name>HCSPLT8</name>
+    <displayName>HCSPLT8</displayName>
+    <description>OTG host channel-8 split control
     register</description>
     <addressOffset>0x204</addressOffset>
     <size>32</size>
@@ -1500,9 +1507,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT9</name>
-    <displayName>OTG_HS_HCSPLT9</displayName>
-    <description>OTG_HS host channel-9 split control
+    <name>HCSPLT9</name>
+    <displayName>HCSPLT9</displayName>
+    <description>OTG host channel-9 split control
     register</description>
     <addressOffset>0x224</addressOffset>
     <size>32</size>
@@ -1542,9 +1549,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT10</name>
-    <displayName>OTG_HS_HCSPLT10</displayName>
-    <description>OTG_HS host channel-10 split control
+    <name>HCSPLT10</name>
+    <displayName>HCSPLT10</displayName>
+    <description>OTG host channel-10 split control
     register</description>
     <addressOffset>0x244</addressOffset>
     <size>32</size>
@@ -1584,9 +1591,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCSPLT11</name>
-    <displayName>OTG_HS_HCSPLT11</displayName>
-    <description>OTG_HS host channel-11 split control
+    <name>HCSPLT11</name>
+    <displayName>HCSPLT11</displayName>
+    <description>OTG host channel-11 split control
     register</description>
     <addressOffset>0x264</addressOffset>
     <size>32</size>
@@ -1625,10 +1632,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_HCINT0</name>
-    <displayName>OTG_HS_HCINT0</displayName>
-    <description>OTG_HS host channel-11 interrupt
+    <name>HCINT0</name>
+    <displayName>HCINT0</displayName>
+    <description>OTG host channel-11 interrupt
     register</description>
     <addressOffset>0x108</addressOffset>
     <size>32</size>
@@ -1647,12 +1655,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -1674,6 +1684,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -1681,6 +1692,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -1708,9 +1720,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT1</name>
-    <displayName>OTG_HS_HCINT1</displayName>
-    <description>OTG_HS host channel-1 interrupt
+    <name>HCINT1</name>
+    <displayName>HCINT1</displayName>
+    <description>OTG host channel-1 interrupt
     register</description>
     <addressOffset>0x128</addressOffset>
     <size>32</size>
@@ -1729,12 +1741,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -1756,6 +1770,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -1763,6 +1778,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -1790,9 +1806,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT2</name>
-    <displayName>OTG_HS_HCINT2</displayName>
-    <description>OTG_HS host channel-2 interrupt
+    <name>HCINT2</name>
+    <displayName>HCINT2</displayName>
+    <description>OTG host channel-2 interrupt
     register</description>
     <addressOffset>0x148</addressOffset>
     <size>32</size>
@@ -1811,12 +1827,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -1838,6 +1856,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -1845,6 +1864,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -1872,9 +1892,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT3</name>
-    <displayName>OTG_HS_HCINT3</displayName>
-    <description>OTG_HS host channel-3 interrupt
+    <name>HCINT3</name>
+    <displayName>HCINT3</displayName>
+    <description>OTG host channel-3 interrupt
     register</description>
     <addressOffset>0x168</addressOffset>
     <size>32</size>
@@ -1893,12 +1913,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -1920,6 +1942,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -1927,6 +1950,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -1954,9 +1978,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT4</name>
-    <displayName>OTG_HS_HCINT4</displayName>
-    <description>OTG_HS host channel-4 interrupt
+    <name>HCINT4</name>
+    <displayName>HCINT4</displayName>
+    <description>OTG host channel-4 interrupt
     register</description>
     <addressOffset>0x188</addressOffset>
     <size>32</size>
@@ -1975,12 +1999,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -2002,6 +2028,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -2009,6 +2036,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -2036,9 +2064,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT5</name>
-    <displayName>OTG_HS_HCINT5</displayName>
-    <description>OTG_HS host channel-5 interrupt
+    <name>HCINT5</name>
+    <displayName>HCINT5</displayName>
+    <description>OTG host channel-5 interrupt
     register</description>
     <addressOffset>0x1A8</addressOffset>
     <size>32</size>
@@ -2057,12 +2085,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -2084,6 +2114,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -2091,6 +2122,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -2118,9 +2150,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT6</name>
-    <displayName>OTG_HS_HCINT6</displayName>
-    <description>OTG_HS host channel-6 interrupt
+    <name>HCINT6</name>
+    <displayName>HCINT6</displayName>
+    <description>OTG host channel-6 interrupt
     register</description>
     <addressOffset>0x1C8</addressOffset>
     <size>32</size>
@@ -2139,12 +2171,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -2166,6 +2200,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -2173,6 +2208,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -2200,9 +2236,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT7</name>
-    <displayName>OTG_HS_HCINT7</displayName>
-    <description>OTG_HS host channel-7 interrupt
+    <name>HCINT7</name>
+    <displayName>HCINT7</displayName>
+    <description>OTG host channel-7 interrupt
     register</description>
     <addressOffset>0x1E8</addressOffset>
     <size>32</size>
@@ -2221,12 +2257,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALL</name>
         <description>STALL response received
@@ -2248,6 +2286,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>Response received
@@ -2255,6 +2294,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERR</name>
         <description>Transaction error</description>
@@ -2281,10 +2321,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_HCINT8</name>
-    <displayName>OTG_HS_HCINT8</displayName>
-    <description>OTG_HS host channel-8 interrupt
+    <name>HCINT8</name>
+    <displayName>HCINT8</displayName>
+    <description>OTG host channel-8 interrupt
     register</description>
     <addressOffset>0x208</addressOffset>
     <size>32</size>
@@ -2364,9 +2405,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT9</name>
-    <displayName>OTG_HS_HCINT9</displayName>
-    <description>OTG_HS host channel-9 interrupt
+    <name>HCINT9</name>
+    <displayName>HCINT9</displayName>
+    <description>OTG host channel-9 interrupt
     register</description>
     <addressOffset>0x228</addressOffset>
     <size>32</size>
@@ -2446,9 +2487,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT10</name>
-    <displayName>OTG_HS_HCINT10</displayName>
-    <description>OTG_HS host channel-10 interrupt
+    <name>HCINT10</name>
+    <displayName>HCINT10</displayName>
+    <description>OTG host channel-10 interrupt
     register</description>
     <addressOffset>0x248</addressOffset>
     <size>32</size>
@@ -2528,9 +2569,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINT11</name>
-    <displayName>OTG_HS_HCINT11</displayName>
-    <description>OTG_HS host channel-11 interrupt
+    <name>HCINT11</name>
+    <displayName>HCINT11</displayName>
+    <description>OTG host channel-11 interrupt
     register</description>
     <addressOffset>0x268</addressOffset>
     <size>32</size>
@@ -2609,10 +2650,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_HCINTMSK0</name>
-    <displayName>OTG_HS_HCINTMSK0</displayName>
-    <description>OTG_HS host channel-11 interrupt mask
+    <name>HCINTMSK0</name>
+    <displayName>HCINTMSK0</displayName>
+    <description>OTG host channel-11 interrupt mask
     register</description>
     <addressOffset>0x10C</addressOffset>
     <size>32</size>
@@ -2631,12 +2673,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -2658,6 +2702,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -2665,6 +2710,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -2692,9 +2738,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK1</name>
-    <displayName>OTG_HS_HCINTMSK1</displayName>
-    <description>OTG_HS host channel-1 interrupt mask
+    <name>HCINTMSK1</name>
+    <displayName>HCINTMSK1</displayName>
+    <description>OTG host channel-1 interrupt mask
     register</description>
     <addressOffset>0x12C</addressOffset>
     <size>32</size>
@@ -2713,12 +2759,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -2740,6 +2788,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -2747,6 +2796,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -2774,9 +2824,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK2</name>
-    <displayName>OTG_HS_HCINTMSK2</displayName>
-    <description>OTG_HS host channel-2 interrupt mask
+    <name>HCINTMSK2</name>
+    <displayName>HCINTMSK2</displayName>
+    <description>OTG host channel-2 interrupt mask
     register</description>
     <addressOffset>0x14C</addressOffset>
     <size>32</size>
@@ -2795,12 +2845,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -2822,6 +2874,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -2829,6 +2882,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -2856,9 +2910,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK3</name>
-    <displayName>OTG_HS_HCINTMSK3</displayName>
-    <description>OTG_HS host channel-3 interrupt mask
+    <name>HCINTMSK3</name>
+    <displayName>HCINTMSK3</displayName>
+    <description>OTG host channel-3 interrupt mask
     register</description>
     <addressOffset>0x16C</addressOffset>
     <size>32</size>
@@ -2877,12 +2931,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -2904,6 +2960,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -2911,6 +2968,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -2938,9 +2996,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK4</name>
-    <displayName>OTG_HS_HCINTMSK4</displayName>
-    <description>OTG_HS host channel-4 interrupt mask
+    <name>HCINTMSK4</name>
+    <displayName>HCINTMSK4</displayName>
+    <description>OTG host channel-4 interrupt mask
     register</description>
     <addressOffset>0x18C</addressOffset>
     <size>32</size>
@@ -2959,12 +3017,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -2986,6 +3046,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -2993,6 +3054,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -3020,9 +3082,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK5</name>
-    <displayName>OTG_HS_HCINTMSK5</displayName>
-    <description>OTG_HS host channel-5 interrupt mask
+    <name>HCINTMSK5</name>
+    <displayName>HCINTMSK5</displayName>
+    <description>OTG host channel-5 interrupt mask
     register</description>
     <addressOffset>0x1AC</addressOffset>
     <size>32</size>
@@ -3041,12 +3103,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -3068,6 +3132,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -3075,6 +3140,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -3102,9 +3168,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK6</name>
-    <displayName>OTG_HS_HCINTMSK6</displayName>
-    <description>OTG_HS host channel-6 interrupt mask
+    <name>HCINTMSK6</name>
+    <displayName>HCINTMSK6</displayName>
+    <description>OTG host channel-6 interrupt mask
     register</description>
     <addressOffset>0x1CC</addressOffset>
     <size>32</size>
@@ -3123,12 +3189,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -3150,6 +3218,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -3157,6 +3226,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -3184,9 +3254,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK7</name>
-    <displayName>OTG_HS_HCINTMSK7</displayName>
-    <description>OTG_HS host channel-7 interrupt mask
+    <name>HCINTMSK7</name>
+    <displayName>HCINTMSK7</displayName>
+    <description>OTG host channel-7 interrupt mask
     register</description>
     <addressOffset>0x1EC</addressOffset>
     <size>32</size>
@@ -3205,12 +3275,14 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>AHBERR</name>
         <description>AHB error</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>STALLM</name>
         <description>STALL response received interrupt
@@ -3232,6 +3304,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>NYET</name>
         <description>response received interrupt
@@ -3239,6 +3312,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXERRM</name>
         <description>Transaction error mask</description>
@@ -3265,10 +3339,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_HCINTMSK8</name>
-    <displayName>OTG_HS_HCINTMSK8</displayName>
-    <description>OTG_HS host channel-8 interrupt mask
+    <name>HCINTMSK8</name>
+    <displayName>HCINTMSK8</displayName>
+    <description>OTG host channel-8 interrupt mask
     register</description>
     <addressOffset>0x20C</addressOffset>
     <size>32</size>
@@ -3348,9 +3423,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK9</name>
-    <displayName>OTG_HS_HCINTMSK9</displayName>
-    <description>OTG_HS host channel-9 interrupt mask
+    <name>HCINTMSK9</name>
+    <displayName>HCINTMSK9</displayName>
+    <description>OTG host channel-9 interrupt mask
     register</description>
     <addressOffset>0x22C</addressOffset>
     <size>32</size>
@@ -3430,9 +3505,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK10</name>
-    <displayName>OTG_HS_HCINTMSK10</displayName>
-    <description>OTG_HS host channel-10 interrupt mask
+    <name>HCINTMSK10</name>
+    <displayName>HCINTMSK10</displayName>
+    <description>OTG host channel-10 interrupt mask
     register</description>
     <addressOffset>0x24C</addressOffset>
     <size>32</size>
@@ -3512,9 +3587,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCINTMSK11</name>
-    <displayName>OTG_HS_HCINTMSK11</displayName>
-    <description>OTG_HS host channel-11 interrupt mask
+    <name>HCINTMSK11</name>
+    <displayName>HCINTMSK11</displayName>
+    <description>OTG host channel-11 interrupt mask
     register</description>
     <addressOffset>0x26C</addressOffset>
     <size>32</size>
@@ -3593,10 +3668,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_HCTSIZ0</name>
-    <displayName>OTG_HS_HCTSIZ0</displayName>
-    <description>OTG_HS host channel-11 transfer size
+    <name>HCTSIZ0</name>
+    <displayName>HCTSIZ0</displayName>
+    <description>OTG host channel-11 transfer size
     register</description>
     <addressOffset>0x110</addressOffset>
     <size>32</size>
@@ -3624,9 +3700,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ1</name>
-    <displayName>OTG_HS_HCTSIZ1</displayName>
-    <description>OTG_HS host channel-1 transfer size
+    <name>HCTSIZ1</name>
+    <displayName>HCTSIZ1</displayName>
+    <description>OTG host channel-1 transfer size
     register</description>
     <addressOffset>0x130</addressOffset>
     <size>32</size>
@@ -3654,9 +3730,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ2</name>
-    <displayName>OTG_HS_HCTSIZ2</displayName>
-    <description>OTG_HS host channel-2 transfer size
+    <name>HCTSIZ2</name>
+    <displayName>HCTSIZ2</displayName>
+    <description>OTG host channel-2 transfer size
     register</description>
     <addressOffset>0x150</addressOffset>
     <size>32</size>
@@ -3684,9 +3760,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ3</name>
-    <displayName>OTG_HS_HCTSIZ3</displayName>
-    <description>OTG_HS host channel-3 transfer size
+    <name>HCTSIZ3</name>
+    <displayName>HCTSIZ3</displayName>
+    <description>OTG host channel-3 transfer size
     register</description>
     <addressOffset>0x170</addressOffset>
     <size>32</size>
@@ -3714,9 +3790,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ4</name>
-    <displayName>OTG_HS_HCTSIZ4</displayName>
-    <description>OTG_HS host channel-4 transfer size
+    <name>HCTSIZ4</name>
+    <displayName>HCTSIZ4</displayName>
+    <description>OTG host channel-4 transfer size
     register</description>
     <addressOffset>0x190</addressOffset>
     <size>32</size>
@@ -3744,9 +3820,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ5</name>
-    <displayName>OTG_HS_HCTSIZ5</displayName>
-    <description>OTG_HS host channel-5 transfer size
+    <name>HCTSIZ5</name>
+    <displayName>HCTSIZ5</displayName>
+    <description>OTG host channel-5 transfer size
     register</description>
     <addressOffset>0x1B0</addressOffset>
     <size>32</size>
@@ -3774,9 +3850,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ6</name>
-    <displayName>OTG_HS_HCTSIZ6</displayName>
-    <description>OTG_HS host channel-6 transfer size
+    <name>HCTSIZ6</name>
+    <displayName>HCTSIZ6</displayName>
+    <description>OTG host channel-6 transfer size
     register</description>
     <addressOffset>0x1D0</addressOffset>
     <size>32</size>
@@ -3804,9 +3880,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ7</name>
-    <displayName>OTG_HS_HCTSIZ7</displayName>
-    <description>OTG_HS host channel-7 transfer size
+    <name>HCTSIZ7</name>
+    <displayName>HCTSIZ7</displayName>
+    <description>OTG host channel-7 transfer size
     register</description>
     <addressOffset>0x1F0</addressOffset>
     <size>32</size>
@@ -3833,10 +3909,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_HCTSIZ8</name>
-    <displayName>OTG_HS_HCTSIZ8</displayName>
-    <description>OTG_HS host channel-8 transfer size
+    <name>HCTSIZ8</name>
+    <displayName>HCTSIZ8</displayName>
+    <description>OTG host channel-8 transfer size
     register</description>
     <addressOffset>0x210</addressOffset>
     <size>32</size>
@@ -3864,9 +3941,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ9</name>
-    <displayName>OTG_HS_HCTSIZ9</displayName>
-    <description>OTG_HS host channel-9 transfer size
+    <name>HCTSIZ9</name>
+    <displayName>HCTSIZ9</displayName>
+    <description>OTG host channel-9 transfer size
     register</description>
     <addressOffset>0x230</addressOffset>
     <size>32</size>
@@ -3894,9 +3971,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ10</name>
-    <displayName>OTG_HS_HCTSIZ10</displayName>
-    <description>OTG_HS host channel-10 transfer size
+    <name>HCTSIZ10</name>
+    <displayName>HCTSIZ10</displayName>
+    <description>OTG host channel-10 transfer size
     register</description>
     <addressOffset>0x250</addressOffset>
     <size>32</size>
@@ -3924,9 +4001,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCTSIZ11</name>
-    <displayName>OTG_HS_HCTSIZ11</displayName>
-    <description>OTG_HS host channel-11 transfer size
+    <name>HCTSIZ11</name>
+    <displayName>HCTSIZ11</displayName>
+    <description>OTG host channel-11 transfer size
     register</description>
     <addressOffset>0x270</addressOffset>
     <size>32</size>
@@ -3953,10 +4030,12 @@
       </field>
     </fields>
   </register>
+#endif
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_HCDMA0</name>
-    <displayName>OTG_HS_HCDMA0</displayName>
-    <description>OTG_HS host channel-0 DMA address
+    <name>HCDMA0</name>
+    <displayName>HCDMA0</displayName>
+    <description>OTG host channel-0 DMA address
     register</description>
     <addressOffset>0x114</addressOffset>
     <size>32</size>
@@ -3972,9 +4051,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA1</name>
-    <displayName>OTG_HS_HCDMA1</displayName>
-    <description>OTG_HS host channel-1 DMA address
+    <name>HCDMA1</name>
+    <displayName>HCDMA1</displayName>
+    <description>OTG host channel-1 DMA address
     register</description>
     <addressOffset>0x134</addressOffset>
     <size>32</size>
@@ -3990,9 +4069,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA2</name>
-    <displayName>OTG_HS_HCDMA2</displayName>
-    <description>OTG_HS host channel-2 DMA address
+    <name>HCDMA2</name>
+    <displayName>HCDMA2</displayName>
+    <description>OTG host channel-2 DMA address
     register</description>
     <addressOffset>0x154</addressOffset>
     <size>32</size>
@@ -4008,9 +4087,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA3</name>
-    <displayName>OTG_HS_HCDMA3</displayName>
-    <description>OTG_HS host channel-3 DMA address
+    <name>HCDMA3</name>
+    <displayName>HCDMA3</displayName>
+    <description>OTG host channel-3 DMA address
     register</description>
     <addressOffset>0x174</addressOffset>
     <size>32</size>
@@ -4026,9 +4105,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA4</name>
-    <displayName>OTG_HS_HCDMA4</displayName>
-    <description>OTG_HS host channel-4 DMA address
+    <name>HCDMA4</name>
+    <displayName>HCDMA4</displayName>
+    <description>OTG host channel-4 DMA address
     register</description>
     <addressOffset>0x194</addressOffset>
     <size>32</size>
@@ -4044,9 +4123,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA5</name>
-    <displayName>OTG_HS_HCDMA5</displayName>
-    <description>OTG_HS host channel-5 DMA address
+    <name>HCDMA5</name>
+    <displayName>HCDMA5</displayName>
+    <description>OTG host channel-5 DMA address
     register</description>
     <addressOffset>0x1B4</addressOffset>
     <size>32</size>
@@ -4062,9 +4141,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA6</name>
-    <displayName>OTG_HS_HCDMA6</displayName>
-    <description>OTG_HS host channel-6 DMA address
+    <name>HCDMA6</name>
+    <displayName>HCDMA6</displayName>
+    <description>OTG host channel-6 DMA address
     register</description>
     <addressOffset>0x1D4</addressOffset>
     <size>32</size>
@@ -4080,9 +4159,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA7</name>
-    <displayName>OTG_HS_HCDMA7</displayName>
-    <description>OTG_HS host channel-7 DMA address
+    <name>HCDMA7</name>
+    <displayName>HCDMA7</displayName>
+    <description>OTG host channel-7 DMA address
     register</description>
     <addressOffset>0x1F4</addressOffset>
     <size>32</size>
@@ -4098,9 +4177,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA8</name>
-    <displayName>OTG_HS_HCDMA8</displayName>
-    <description>OTG_HS host channel-8 DMA address
+    <name>HCDMA8</name>
+    <displayName>HCDMA8</displayName>
+    <description>OTG host channel-8 DMA address
     register</description>
     <addressOffset>0x214</addressOffset>
     <size>32</size>
@@ -4116,9 +4195,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA9</name>
-    <displayName>OTG_HS_HCDMA9</displayName>
-    <description>OTG_HS host channel-9 DMA address
+    <name>HCDMA9</name>
+    <displayName>HCDMA9</displayName>
+    <description>OTG host channel-9 DMA address
     register</description>
     <addressOffset>0x234</addressOffset>
     <size>32</size>
@@ -4134,9 +4213,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA10</name>
-    <displayName>OTG_HS_HCDMA10</displayName>
-    <description>OTG_HS host channel-10 DMA address
+    <name>HCDMA10</name>
+    <displayName>HCDMA10</displayName>
+    <description>OTG host channel-10 DMA address
     register</description>
     <addressOffset>0x254</addressOffset>
     <size>32</size>
@@ -4152,9 +4231,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HCDMA11</name>
-    <displayName>OTG_HS_HCDMA11</displayName>
-    <description>OTG_HS host channel-11 DMA address
+    <name>HCDMA11</name>
+    <displayName>HCDMA11</displayName>
+    <description>OTG host channel-11 DMA address
     register</description>
     <addressOffset>0x274</addressOffset>
     <size>32</size>
@@ -4169,4 +4248,6 @@
       </field>
     </fields>
   </register>
+#endif
 </registers>
+#undef __USBOTG_HS

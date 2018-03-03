@@ -1,4 +1,8 @@
+#ifdef __USBOTG_HS
 <description>USB on the go high speed</description>
+#else
+<description>USB on the go full speed</description>
+#endif
 <addressBlock>
   <offset>0x0</offset>
   <size>0x400</size>
