@@ -847,6 +847,20 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>UART7RST</name>
+        <description>UART7 reset</description>
+        <bitOffset>30</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>UART8RST</name>
+        <description>UART8 reset</description>
+        <bitOffset>31</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -926,6 +940,26 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>SPI4RST</name>
+        <description>SPI4 reset</description>
+        <bitOffset>13</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>SPI5RST</name>
+        <description>SPI5 reset</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>SPI6RST</name>
+        <description>SPI6 reset</description>
+        <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1383,6 +1417,24 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>UART7ENR</name>
+        <description>UART7 clock enable</description>
+        <bitOffset>30</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>UART8ENR</name>
+        <description>UART8 clock enable</description>
+        <bitOffset>31</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1500,6 +1552,32 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>SPI4ENR</name>
+        <description>SPI4 clock enable</description>
+        <bitOffset>13</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>SPI5ENR</name>
+        <description>SPI5 clock enable</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>SPI6ENR</name>
+        <description>SPI6 clock enable</description>
+        <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -2013,6 +2091,26 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>UART7LPEN</name>
+        <description>UART7 clock enable during Sleep
+        mode</description>
+        <bitOffset>30</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>UART8LPEN</name>
+        <description>UART8 clock enable during Sleep
+        mode</description>
+        <bitOffset>31</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -2142,6 +2240,35 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>SPI4LPEN</name>
+        <description>SPI 4 clock enable during Sleep
+        mode</description>
+        <bitOffset>13</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>SPI5LPEN</name>
+        <description>SPI 5 clock enable during Sleep
+        mode</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>SPI6LPEN</name>
+        <description>SPI 6 clock enable during Sleep
+        mode</description>
+        <bitOffset>21</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>

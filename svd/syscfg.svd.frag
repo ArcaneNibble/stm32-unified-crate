@@ -32,6 +32,7 @@
     <access>read-write</access>
     <resetValue>0x00000000</resetValue>
     <fields>
+#ifdef __HAVE_ETHERNET
       <field>
         <name>MII_RMII_SEL</name>
         <description>Ethernet PHY interface
@@ -39,6 +40,27 @@
         <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#if defined(STM32F427)
+      <field>
+        <name>ADC1DC2</name>
+        <description>ADC1DC2</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>ADC2DC2</name>
+        <description>ADC2DC2</description>
+        <bitOffset>17</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>ADC3DC2</name>
+        <description>ADC3DC2</description>
+        <bitOffset>18</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>

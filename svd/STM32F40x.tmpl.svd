@@ -13,6 +13,11 @@
 #define __HAVE_CRYPTO
 #endif
 
+#ifdef STM32F427
+#define __HAVE_ETHERNET
+#define __HAVE_DCMI
+#endif
+
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
@@ -25,6 +30,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F415</name>
 #elif defined(STM32F417)
   <name>STM32F417</name>
+#elif defined(STM32F427)
+  <name>STM32F427</name>
 #else
 #warning "Generic 40x chosen"
   <name>STM32F40x</name>
@@ -48,6 +55,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <description>STM32F415</description>
 #elif defined(STM32F417)
   <description>STM32F417</description>
+#elif defined(STM32F427)
+  <description>STM32F427</description>
 #else
   <description>STM32F40x</description>
 #endif
@@ -302,6 +311,35 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <name>I2S3ext</name>
       <baseAddress>0x40004000</baseAddress>
     </peripheral>
+#if defined(STM32F427)
+    <peripheral derivedFrom="SPI1">
+      <name>SPI4</name>
+      <baseAddress>0x40013400</baseAddress>
+      <interrupt>
+        <name>SPI4</name>
+        <description>SPI 4 global interrupt</description>
+        <value>84</value>
+      </interrupt>
+    </peripheral>
+    <peripheral derivedFrom="SPI1">
+      <name>SPI5</name>
+      <baseAddress>0x40015000</baseAddress>
+      <interrupt>
+        <name>SPI5</name>
+        <description>SPI 5 global interrupt</description>
+        <value>85</value>
+      </interrupt>
+    </peripheral>
+    <peripheral derivedFrom="SPI1">
+      <name>SPI6</name>
+      <baseAddress>0x40015400</baseAddress>
+      <interrupt>
+        <name>SPI6</name>
+        <description>SPI 6 global interrupt</description>
+        <value>86</value>
+      </interrupt>
+    </peripheral>
+#endif
     <peripheral>
       <name>SDIO</name>
       <baseAddress>0x40012C00</baseAddress>
@@ -377,6 +415,26 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>39</value>
       </interrupt>
     </peripheral>
+#if defined(STM32F427)
+    <peripheral derivedFrom="UART4">
+      <name>UART7</name>
+      <baseAddress>0x40007800</baseAddress>
+      <interrupt>
+        <name>UART7</name>
+        <description>UART 7 global interrupt</description>
+        <value>82</value>
+      </interrupt>
+    </peripheral>
+    <peripheral derivedFrom="UART4">
+      <name>UART8</name>
+      <baseAddress>0x40007C00</baseAddress>
+      <interrupt>
+        <name>UART8</name>
+        <description>UART 8 global interrupt</description>
+        <value>83</value>
+      </interrupt>
+    </peripheral>
+#endif
     <peripheral>
       <name>DAC</name>
       <baseAddress>0x40007400</baseAddress>
@@ -886,11 +944,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>EXTI4</name>
         <description>EXTI Line4 interrupt</description>
         <value>10</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI9_5</name>
-        <description>EXTI Line[9:5] interrupts</description>
-        <value>23</value>
       </interrupt>
       <interrupt>
         <name>EXTI9_5</name>
