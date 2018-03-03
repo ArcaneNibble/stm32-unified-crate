@@ -803,18 +803,17 @@
     </fields>
   </register>
   <register>
-    <name>GRXSTSR_Host</name>
-    <displayName>GRXSTSR_Host</displayName>
-    <description>OTG Receive status debug read register
-    (host mode)</description>
+    <name>GRXSTSR</name>
+    <displayName>GRXSTSR</displayName>
+    <description>OTG Receive status debug read register (unified)</description>
     <addressOffset>0x1C</addressOffset>
     <size>32</size>
     <access>read-only</access>
     <resetValue>0x0</resetValue>
     <fields>
       <field>
-        <name>CHNUM</name>
-        <description>Channel number</description>
+        <name>EPNUM_CHNUM</name>
+        <description>Endpoint number or Channel number</description>
         <bitOffset>0</bitOffset>
         <bitWidth>4</bitWidth>
       </field>
@@ -836,21 +835,26 @@
         <bitOffset>17</bitOffset>
         <bitWidth>4</bitWidth>
       </field>
+      <field>
+        <name>FRMNUM</name>
+        <description>Frame number</description>
+        <bitOffset>21</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
     </fields>
   </register>
   <register>
-    <name>GRXSTSP_Host</name>
-    <displayName>GRXSTSP_Host</displayName>
-    <description>OTG status read and pop register (host
-    mode)</description>
+    <name>GRXSTSP</name>
+    <displayName>GRXSTSP</displayName>
+    <description>OTG status read and pop register (unified)</description>
     <addressOffset>0x20</addressOffset>
     <size>32</size>
     <access>read-only</access>
     <resetValue>0x0</resetValue>
     <fields>
       <field>
-        <name>CHNUM</name>
-        <description>Channel number</description>
+        <name>EPNUM_CHNUM</name>
+        <description>Endpoint number or Channel number</description>
         <bitOffset>0</bitOffset>
         <bitWidth>4</bitWidth>
       </field>
@@ -870,6 +874,12 @@
         <name>PKTSTS</name>
         <description>Packet status</description>
         <bitOffset>17</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>FRMNUM</name>
+        <description>Frame number</description>
+        <bitOffset>21</bitOffset>
         <bitWidth>4</bitWidth>
       </field>
     </fields>
@@ -893,51 +903,25 @@
     </fields>
   </register>
   <register>
-    <name>GNPTXFSIZ_Host</name>
-    <displayName>GNPTXFSIZ_Host</displayName>
-    <description>OTG nonperiodic transmit FIFO size
-    register (host mode)</description>
+    <name>GNPTXFSIZ_TX0FSIZ</name>
+    <displayName>GNPTXFSIZ_TX0FSIZ</displayName>
+    <description>OTG nonperiodic transmit FIFO size register (host mode) OR
+      Endpoint 0 transmit FIFO size (peripheral mode)</description>
     <addressOffset>0x28</addressOffset>
     <size>32</size>
     <access>read-write</access>
     <resetValue>0x00000200</resetValue>
     <fields>
       <field>
-        <name>NPTXFSA</name>
-        <description>Nonperiodic transmit RAM start
+        <name>NPTXFSA_TX0FSA</name>
+        <description>Nonperiodic/Endpoint 0 transmit RAM start
         address</description>
         <bitOffset>0</bitOffset>
         <bitWidth>16</bitWidth>
       </field>
       <field>
-        <name>NPTXFD</name>
-        <description>Nonperiodic TxFIFO depth</description>
-        <bitOffset>16</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-    </fields>
-  </register>
-  <register>
-    <name>TX0FSIZ_Peripheral</name>
-    <displayName>TX0FSIZ_Peripheral</displayName>
-    <description>Endpoint 0 transmit FIFO size (peripheral
-    mode)</description>
-    <alternateRegister>GNPTXFSIZ_Host</alternateRegister>
-    <addressOffset>0x28</addressOffset>
-    <size>32</size>
-    <access>read-write</access>
-    <resetValue>0x00000200</resetValue>
-    <fields>
-      <field>
-        <name>TX0FSA</name>
-        <description>Endpoint 0 transmit RAM start
-        address</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-      <field>
-        <name>TX0FD</name>
-        <description>Endpoint 0 TxFIFO depth</description>
+        <name>NPTXFD_TX0FD</name>
+        <description>Nonperiodic/Endpoint 0 TxFIFO depth</description>
         <bitOffset>16</bitOffset>
         <bitWidth>16</bitWidth>
       </field>
@@ -1248,91 +1232,5 @@
     </fields>
   </register>
 #endif
-  <register>
-    <name>GRXSTSR_Peripheral</name>
-    <displayName>GRXSTSR_Peripheral</displayName>
-    <description>OTG Receive status debug read register
-    (peripheral mode mode)</description>
-    <alternateRegister>GRXSTSR_Host</alternateRegister>
-    <addressOffset>0x1C</addressOffset>
-    <size>32</size>
-    <access>read-only</access>
-    <resetValue>0x0</resetValue>
-    <fields>
-      <field>
-        <name>EPNUM</name>
-        <description>Endpoint number</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>4</bitWidth>
-      </field>
-      <field>
-        <name>BCNT</name>
-        <description>Byte count</description>
-        <bitOffset>4</bitOffset>
-        <bitWidth>11</bitWidth>
-      </field>
-      <field>
-        <name>DPID</name>
-        <description>Data PID</description>
-        <bitOffset>15</bitOffset>
-        <bitWidth>2</bitWidth>
-      </field>
-      <field>
-        <name>PKTSTS</name>
-        <description>Packet status</description>
-        <bitOffset>17</bitOffset>
-        <bitWidth>4</bitWidth>
-      </field>
-      <field>
-        <name>FRMNUM</name>
-        <description>Frame number</description>
-        <bitOffset>21</bitOffset>
-        <bitWidth>4</bitWidth>
-      </field>
-    </fields>
-  </register>
-  <register>
-    <name>GRXSTSP_Peripheral</name>
-    <displayName>GRXSTSP_Peripheral</displayName>
-    <description>OTG status read and pop register
-    (peripheral mode)</description>
-    <alternateRegister>GRXSTSP_Host</alternateRegister>
-    <addressOffset>0x20</addressOffset>
-    <size>32</size>
-    <access>read-only</access>
-    <resetValue>0x0</resetValue>
-    <fields>
-      <field>
-        <name>EPNUM</name>
-        <description>Endpoint number</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>4</bitWidth>
-      </field>
-      <field>
-        <name>BCNT</name>
-        <description>Byte count</description>
-        <bitOffset>4</bitOffset>
-        <bitWidth>11</bitWidth>
-      </field>
-      <field>
-        <name>DPID</name>
-        <description>Data PID</description>
-        <bitOffset>15</bitOffset>
-        <bitWidth>2</bitWidth>
-      </field>
-      <field>
-        <name>PKTSTS</name>
-        <description>Packet status</description>
-        <bitOffset>17</bitOffset>
-        <bitWidth>4</bitWidth>
-      </field>
-      <field>
-        <name>FRMNUM</name>
-        <description>Frame number</description>
-        <bitOffset>21</bitOffset>
-        <bitWidth>4</bitWidth>
-      </field>
-    </fields>
-  </register>
 </registers>
 #undef __USBOTG_HS
