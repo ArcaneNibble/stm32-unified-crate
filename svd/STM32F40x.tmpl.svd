@@ -24,6 +24,7 @@
 #define __HAVE_FMC
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
+#define __HAVE_SAI
 #endif
 
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
@@ -1052,5 +1053,17 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
 #include "usbotg_pwrclk.svd.frag"
     </peripheral>
 #include "nvic.svd.frag"
+#ifdef __HAVE_SAI
+    <peripheral>
+      <name>SAI</name>
+      <baseAddress>0x40015800</baseAddress>
+      <interrupt>
+        <name>SAI1</name>
+        <description>SAI1 global interrupt</description>
+        <value>87</value>
+      </interrupt>
+#include "sai.svd.frag"
+    </peripheral>
+#endif
   </peripherals>
 </device>
