@@ -3,6 +3,16 @@
 #define __HAVE_DCMI
 #endif
 
+#ifdef STM32F415
+#define __HAVE_CRYPTO
+#endif
+
+#ifdef STM32F417
+#define __HAVE_ETHERNET
+#define __HAVE_DCMI
+#define __HAVE_CRYPTO
+#endif
+
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
@@ -11,6 +21,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F405</name>
 #elif defined(STM32F407)
   <name>STM32F407</name>
+#elif defined(STM32F415)
+  <name>STM32F415</name>
+#elif defined(STM32F417)
+  <name>STM32F417</name>
 #else
 #warning "Generic 40x chosen"
   <name>STM32F40x</name>
@@ -30,6 +44,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <description>STM32F405</description>
 #elif defined(STM32F407)
   <description>STM32F407</description>
+#elif defined(STM32F415)
+  <description>STM32F415</description>
+#elif defined(STM32F417)
+  <description>STM32F417</description>
 #else
   <description>STM32F40x</description>
 #endif
@@ -53,6 +71,28 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       </interrupt>
 #include "rng.svd.frag"
     </peripheral>
+#ifdef __HAVE_CRYPTO
+    <peripheral>
+      <name>HASH</name>
+      <baseAddress>0x50060400</baseAddress>
+      <interrupt>
+        <name>HASH_RNG</name>
+        <description>Hash and RNG global interrupt</description>
+        <value>80</value>
+      </interrupt>
+#include "hash.svd.frag"
+    </peripheral>
+    <peripheral>
+      <name>CRYP</name>
+      <baseAddress>0x50060000</baseAddress>
+      <interrupt>
+        <name>CRYP</name>
+        <description>CRYP crypto global interrupt</description>
+        <value>79</value>
+      </interrupt>
+#include "crypt.svd.frag"
+    </peripheral>
+#endif
 #ifdef __HAVE_DCMI
     <peripheral>
       <name>DCMI</name>
@@ -806,6 +846,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral>
       <name>FLASH</name>
       <baseAddress>0x40023C00</baseAddress>
+      <interrupt>
+        <name>FLASH</name>
+        <description>Flash global interrupt</description>
+        <value>4</value>
+      </interrupt>
 #include "flash.svd.frag"
     </peripheral>
     <peripheral>

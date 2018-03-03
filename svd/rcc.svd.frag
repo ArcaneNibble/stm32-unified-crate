@@ -658,6 +658,20 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __HAVE_CRYPTO
+      <field>
+        <name>HSAHRST</name>
+        <description>Hash module reset</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>CRYPRST</name>
+        <description>Cryptographic module reset</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
 #ifdef __HAVE_DCMI
       <field>
         <name>DCMIRST</name>
@@ -1121,6 +1135,25 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#ifdef __HAVE_CRYPTO
+      <field>
+        <name>HASHEN</name>
+        <description>Hash modules clock enable</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>CRYPEN</name>
+        <description>Cryptographic modules clock
+        enable</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
 #ifdef __HAVE_DCMI
       <field>
         <name>DCMIEN</name>
@@ -1709,6 +1742,26 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#ifdef __HAVE_CRYPTO
+      <field>
+        <name>HASHLPEN</name>
+        <description>Hash modules clock enable during Sleep
+        mode</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>CRYPLPEN</name>
+        <description>Cryptography modules clock enable during
+        Sleep mode</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
 #ifdef __HAVE_DCMI
       <field>
         <name>DCMILPEN</name>
