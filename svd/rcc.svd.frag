@@ -858,7 +858,7 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>UART7RST</name>
         <description>UART7 reset</description>
@@ -951,7 +951,7 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>SPI4RST</name>
         <description>SPI4 reset</description>
@@ -1441,7 +1441,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>UART7ENR</name>
         <description>UART7 clock enable</description>
@@ -1576,7 +1576,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>SPI4ENR</name>
         <description>SPI4 clock enable</description>
@@ -2128,7 +2128,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>UART7LPEN</name>
         <description>UART7 clock enable during Sleep
@@ -2277,7 +2277,7 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>SPI4LPEN</name>
         <description>SPI 4 clock enable during Sleep
@@ -2517,7 +2517,7 @@
       </field>
     </fields>
   </register>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
   <register>
     <name>PLLSAICFGR</name>
     <displayName>PLLSAICFGR</displayName>

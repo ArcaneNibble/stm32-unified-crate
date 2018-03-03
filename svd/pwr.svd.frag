@@ -66,7 +66,7 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>LPUDS</name>
         <description>Low-Power Regulator Low Voltage in
@@ -169,7 +169,7 @@
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>ODRDY</name>
         <description>Over-drive mode ready</description>

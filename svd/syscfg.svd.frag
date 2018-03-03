@@ -41,7 +41,7 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
       <field>
         <name>ADC1DC2</name>
         <description>ADC1DC2</description>

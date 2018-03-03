@@ -27,6 +27,14 @@
 #define __HAVE_SAI
 #endif
 
+#ifdef STM32F437
+#define __HAVE_FMC
+#define __HAVE_ETHERNET
+#define __HAVE_DCMI
+#define __HAVE_SAI
+#define __HAVE_CRYPTO
+#endif
+
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
@@ -41,6 +49,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F417</name>
 #elif defined(STM32F427)
   <name>STM32F427</name>
+#elif defined(STM32F437)
+  <name>STM32F437</name>
 #else
 #warning "Generic 40x chosen"
   <name>STM32F40x</name>
@@ -66,6 +76,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <description>STM32F417</description>
 #elif defined(STM32F427)
   <description>STM32F427</description>
+#elif defined(STM32F437)
+  <description>STM32F437</description>
 #else
   <description>STM32F40x</description>
 #endif
@@ -334,7 +346,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <name>I2S3ext</name>
       <baseAddress>0x40004000</baseAddress>
     </peripheral>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
     <peripheral derivedFrom="SPI1">
       <name>SPI4</name>
       <baseAddress>0x40013400</baseAddress>
@@ -438,7 +450,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>39</value>
       </interrupt>
     </peripheral>
-#if defined(STM32F427)
+#if defined(STM32F427) || defined(STM32F437)
     <peripheral derivedFrom="UART4">
       <name>UART7</name>
       <baseAddress>0x40007800</baseAddress>
