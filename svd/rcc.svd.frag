@@ -1027,6 +1027,14 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
+#ifdef __HAVE_LTDC
+      <field>
+        <name>LTDCRST</name>
+        <description>LTDC reset</description>
+        <bitOffset>26</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1699,6 +1707,16 @@
         <name>SAI1EN</name>
         <description>SAI1 clock enable</description>
         <bitOffset>22</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
+#ifdef __HAVE_LTDC
+      <field>
+        <name>LTDCEN</name>
+        <description>LTDC clock enable</description>
+        <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
@@ -2443,6 +2461,16 @@
         <name>SAI1LPEN</name>
         <description>SAI1 clock enable</description>
         <bitOffset>22</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
+#ifdef __HAVE_LTDC
+      <field>
+        <name>LTDCLPEN</name>
+        <description>LTDC clock enable</description>
+        <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>

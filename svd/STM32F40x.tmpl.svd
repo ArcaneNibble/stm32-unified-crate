@@ -43,6 +43,7 @@
 #define __HAVE_DCMI
 #define __HAVE_SAI
 #define __HAVE_DMA2D
+#define __HAVE_LTDC
 #endif
 
 #ifdef STM32F439
@@ -51,6 +52,7 @@
 #define __HAVE_DCMI
 #define __HAVE_SAI
 #define __HAVE_DMA2D
+#define __HAVE_LTDC
 #define __HAVE_CRYPTO
 #endif
 
@@ -1124,6 +1126,23 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>90</value>
       </interrupt>
 #include "dma2d.svd.frag"
+    </peripheral>
+#endif
+#ifdef __HAVE_LTDC
+    <peripheral>
+      <name>LTDC</name>
+      <baseAddress>0x40016800</baseAddress>
+      <interrupt>
+        <name>LCD_TFT</name>
+        <description>LTDC global interrupt</description>
+        <value>88</value>
+      </interrupt>
+      <interrupt>
+        <name>LCD_TFT_1</name>
+        <description>LTDC global error interrupt</description>
+        <value>89</value>
+      </interrupt>
+#include "ltdc.svd.frag"
     </peripheral>
 #endif
   </peripherals>
