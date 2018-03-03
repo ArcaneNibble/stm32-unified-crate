@@ -925,18 +925,35 @@
         enable</description>
         <bitOffset>30</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <name>ENABLED</name>
+          <enumeratedValue>
+            <name>Disabled</name>
+            <description>Disabled.</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>Enabled</name>
+            <description>Enabled.</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>OTGHSEN</name>
         <description>USB OTG HS clock enable</description>
         <bitOffset>29</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACPTPEN</name>
         <description>Ethernet PTP clock enable</description>
         <bitOffset>28</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACRXEN</name>
@@ -944,6 +961,8 @@
         enable</description>
         <bitOffset>27</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACTXEN</name>
@@ -951,24 +970,32 @@
         enable</description>
         <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACEN</name>
         <description>Ethernet MAC clock enable</description>
         <bitOffset>25</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>DMA2EN</name>
         <description>DMA2 clock enable</description>
         <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>DMA1EN</name>
         <description>DMA1 clock enable</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>BKPSRAMEN</name>
@@ -976,66 +1003,88 @@
         enable</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>CRCEN</name>
         <description>CRC clock enable</description>
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOIEN</name>
         <description>IO port I clock enable</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOHEN</name>
         <description>IO port H clock enable</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOGEN</name>
         <description>IO port G clock enable</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOFEN</name>
         <description>IO port F clock enable</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOEEN</name>
         <description>IO port E clock enable</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIODEN</name>
         <description>IO port D clock enable</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOCEN</name>
         <description>IO port C clock enable</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOBEN</name>
         <description>IO port B clock enable</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOAEN</name>
         <description>IO port A clock enable</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1054,6 +1103,8 @@
         <description>USB OTG FS clock enable</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>RNGEN</name>
@@ -1061,12 +1112,16 @@
         enable</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>DCMIEN</name>
         <description>Camera interface enable</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1086,6 +1141,8 @@
         clock enable</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1104,6 +1161,8 @@
         <description>DAC interface clock enable</description>
         <bitOffset>29</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>PWREN</name>
@@ -1111,72 +1170,96 @@
         enable</description>
         <bitOffset>28</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>CAN2EN</name>
         <description>CAN 2 clock enable</description>
         <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>CAN1EN</name>
         <description>CAN 1 clock enable</description>
         <bitOffset>25</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2C3EN</name>
         <description>I2C3 clock enable</description>
         <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2C2EN</name>
         <description>I2C2 clock enable</description>
         <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2C1EN</name>
         <description>I2C1 clock enable</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>UART5EN</name>
         <description>UART5 clock enable</description>
         <bitOffset>20</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>UART4EN</name>
         <description>UART4 clock enable</description>
         <bitOffset>19</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART3EN</name>
         <description>USART3 clock enable</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART2EN</name>
         <description>USART 2 clock enable</description>
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SPI3EN</name>
         <description>SPI3 clock enable</description>
         <bitOffset>15</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SPI2EN</name>
         <description>SPI2 clock enable</description>
         <bitOffset>14</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>WWDGEN</name>
@@ -1184,60 +1267,80 @@
         enable</description>
         <bitOffset>11</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM14EN</name>
         <description>TIM14 clock enable</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM13EN</name>
         <description>TIM13 clock enable</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM12EN</name>
         <description>TIM12 clock enable</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM7EN</name>
         <description>TIM7 clock enable</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM6EN</name>
         <description>TIM6 clock enable</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM5EN</name>
         <description>TIM5 clock enable</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM4EN</name>
         <description>TIM4 clock enable</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM3EN</name>
         <description>TIM3 clock enable</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM2EN</name>
         <description>TIM2 clock enable</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1256,18 +1359,24 @@
         <description>TIM11 clock enable</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM10EN</name>
         <description>TIM10 clock enable</description>
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM9EN</name>
         <description>TIM9 clock enable</description>
         <bitOffset>16</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SYSCFGEN</name>
@@ -1275,60 +1384,80 @@
         enable</description>
         <bitOffset>14</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SPI1EN</name>
         <description>SPI1 clock enable</description>
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SDIOEN</name>
         <description>SDIO clock enable</description>
         <bitOffset>11</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ADC3EN</name>
         <description>ADC3 clock enable</description>
         <bitOffset>10</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ADC2EN</name>
         <description>ADC2 clock enable</description>
         <bitOffset>9</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ADC1EN</name>
         <description>ADC1 clock enable</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART6EN</name>
         <description>USART6 clock enable</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART1EN</name>
         <description>USART1 clock enable</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM8EN</name>
         <description>TIM8 clock enable</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM1EN</name>
         <description>TIM1 clock enable</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1348,6 +1477,8 @@
         Sleep mode</description>
         <bitOffset>30</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>OTGHSLPEN</name>
@@ -1355,6 +1486,8 @@
         mode</description>
         <bitOffset>29</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACPTPLPEN</name>
@@ -1362,6 +1495,8 @@
         mode</description>
         <bitOffset>28</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACRXLPEN</name>
@@ -1369,6 +1504,8 @@
         Sleep mode</description>
         <bitOffset>27</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACTXLPEN</name>
@@ -1376,6 +1513,8 @@
         during Sleep mode</description>
         <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ETHMACLPEN</name>
@@ -1383,6 +1522,8 @@
         mode</description>
         <bitOffset>25</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>DMA2LPEN</name>
@@ -1390,6 +1531,8 @@
         mode</description>
         <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>DMA1LPEN</name>
@@ -1397,6 +1540,8 @@
         mode</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>BKPSRAMLPEN</name>
@@ -1404,6 +1549,8 @@
         during Sleep mode</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SRAM2LPEN</name>
@@ -1411,6 +1558,8 @@
         Sleep mode</description>
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SRAM1LPEN</name>
@@ -1418,6 +1567,8 @@
         Sleep mode</description>
         <bitOffset>16</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>FLITFLPEN</name>
@@ -1425,6 +1576,8 @@
         Sleep mode</description>
         <bitOffset>15</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>CRCLPEN</name>
@@ -1432,6 +1585,8 @@
         mode</description>
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOILPEN</name>
@@ -1439,6 +1594,8 @@
         mode</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOHLPEN</name>
@@ -1446,6 +1603,8 @@
         mode</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOGLPEN</name>
@@ -1453,6 +1612,8 @@
         mode</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOFLPEN</name>
@@ -1460,6 +1621,8 @@
         mode</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOELPEN</name>
@@ -1467,6 +1630,8 @@
         mode</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIODLPEN</name>
@@ -1474,6 +1639,8 @@
         mode</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOCLPEN</name>
@@ -1481,6 +1648,8 @@
         mode</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOBLPEN</name>
@@ -1488,6 +1657,8 @@
         mode</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>GPIOALPEN</name>
@@ -1495,6 +1666,8 @@
         mode</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1514,6 +1687,8 @@
         mode</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>RNGLPEN</name>
@@ -1521,6 +1696,8 @@
         during Sleep mode</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>DCMILPEN</name>
@@ -1528,6 +1705,8 @@
         mode</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1547,6 +1726,8 @@
         clock enable during Sleep mode</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1566,6 +1747,8 @@
         mode</description>
         <bitOffset>29</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>PWRLPEN</name>
@@ -1573,6 +1756,8 @@
         Sleep mode</description>
         <bitOffset>28</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>CAN2LPEN</name>
@@ -1580,6 +1765,8 @@
         mode</description>
         <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>CAN1LPEN</name>
@@ -1587,6 +1774,8 @@
         mode</description>
         <bitOffset>25</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2C3LPEN</name>
@@ -1594,6 +1783,8 @@
         mode</description>
         <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2C2LPEN</name>
@@ -1601,6 +1792,8 @@
         mode</description>
         <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2C1LPEN</name>
@@ -1608,6 +1801,8 @@
         mode</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>UART5LPEN</name>
@@ -1615,6 +1810,8 @@
         mode</description>
         <bitOffset>20</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>UART4LPEN</name>
@@ -1622,6 +1819,8 @@
         mode</description>
         <bitOffset>19</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART3LPEN</name>
@@ -1629,6 +1828,8 @@
         mode</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART2LPEN</name>
@@ -1636,6 +1837,8 @@
         mode</description>
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SPI3LPEN</name>
@@ -1643,6 +1846,8 @@
         mode</description>
         <bitOffset>15</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SPI2LPEN</name>
@@ -1650,6 +1855,8 @@
         mode</description>
         <bitOffset>14</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>WWDGLPEN</name>
@@ -1657,6 +1864,8 @@
         Sleep mode</description>
         <bitOffset>11</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM14LPEN</name>
@@ -1664,6 +1873,8 @@
         mode</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM13LPEN</name>
@@ -1671,6 +1882,8 @@
         mode</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM12LPEN</name>
@@ -1678,6 +1891,8 @@
         mode</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM7LPEN</name>
@@ -1685,6 +1900,8 @@
         mode</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM6LPEN</name>
@@ -1692,6 +1909,8 @@
         mode</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM5LPEN</name>
@@ -1699,6 +1918,8 @@
         mode</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM4LPEN</name>
@@ -1706,6 +1927,8 @@
         mode</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM3LPEN</name>
@@ -1713,6 +1936,8 @@
         mode</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM2LPEN</name>
@@ -1720,6 +1945,8 @@
         mode</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1739,6 +1966,8 @@
         mode</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM10LPEN</name>
@@ -1746,6 +1975,8 @@
         mode</description>
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM9LPEN</name>
@@ -1753,6 +1984,8 @@
         mode</description>
         <bitOffset>16</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SYSCFGLPEN</name>
@@ -1760,6 +1993,8 @@
         enable during Sleep mode</description>
         <bitOffset>14</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SPI1LPEN</name>
@@ -1767,6 +2002,8 @@
         mode</description>
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>SDIOLPEN</name>
@@ -1774,6 +2011,8 @@
         mode</description>
         <bitOffset>11</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ADC3LPEN</name>
@@ -1781,6 +2020,8 @@
         mode</description>
         <bitOffset>10</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ADC2LPEN</name>
@@ -1788,6 +2029,8 @@
         mode</description>
         <bitOffset>9</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>ADC1LPEN</name>
@@ -1795,6 +2038,8 @@
         mode</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART6LPEN</name>
@@ -1802,6 +2047,8 @@
         mode</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>USART1LPEN</name>
@@ -1809,6 +2056,8 @@
         mode</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM8LPEN</name>
@@ -1816,6 +2065,8 @@
         mode</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
       <field>
         <name>TIM1LPEN</name>
@@ -1823,6 +2074,8 @@
         mode</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
       </field>
     </fields>
   </register>

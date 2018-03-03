@@ -27,6 +27,29 @@
         0..15)</description>
         <bitOffset>30</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues>
+          <name>MODE</name>
+          <enumeratedValue>
+            <name>Input</name>
+            <description>Input mode (reset state)</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>Output</name>
+            <description>General purpose output mode</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>Alternate</name>
+            <description>Alternate function mode</description>
+            <value>2</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>Analog</name>
+            <description>Analog mode</description>
+            <value>3</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER14</name>
@@ -34,6 +57,8 @@
         0..15)</description>
         <bitOffset>28</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER13</name>
@@ -41,6 +66,8 @@
         0..15)</description>
         <bitOffset>26</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER12</name>
@@ -48,6 +75,8 @@
         0..15)</description>
         <bitOffset>24</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER11</name>
@@ -55,6 +84,8 @@
         0..15)</description>
         <bitOffset>22</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER10</name>
@@ -62,6 +93,8 @@
         0..15)</description>
         <bitOffset>20</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER9</name>
@@ -69,6 +102,8 @@
         0..15)</description>
         <bitOffset>18</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER8</name>
@@ -76,6 +111,8 @@
         0..15)</description>
         <bitOffset>16</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER7</name>
@@ -83,6 +120,8 @@
         0..15)</description>
         <bitOffset>14</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER6</name>
@@ -90,6 +129,8 @@
         0..15)</description>
         <bitOffset>12</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER5</name>
@@ -97,6 +138,8 @@
         0..15)</description>
         <bitOffset>10</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER4</name>
@@ -104,6 +147,8 @@
         0..15)</description>
         <bitOffset>8</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER3</name>
@@ -111,6 +156,8 @@
         0..15)</description>
         <bitOffset>6</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER2</name>
@@ -118,6 +165,8 @@
         0..15)</description>
         <bitOffset>4</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER1</name>
@@ -125,6 +174,8 @@
         0..15)</description>
         <bitOffset>2</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
       <field>
         <name>MODER0</name>
@@ -132,6 +183,8 @@
         0..15)</description>
         <bitOffset>0</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues derivedFrom="MODE">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -781,6 +834,15 @@
         0..15)</description>
         <bitOffset>31</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <name>RESET</name>
+          <usage>write</usage>
+          <enumeratedValue>
+            <name>Reset</name>
+            <description>Resets the corresponding ODRx bit</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>BR14</name>
@@ -788,6 +850,8 @@
         0..15)</description>
         <bitOffset>30</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR13</name>
@@ -795,6 +859,8 @@
         0..15)</description>
         <bitOffset>29</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR12</name>
@@ -802,6 +868,8 @@
         0..15)</description>
         <bitOffset>28</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR11</name>
@@ -809,6 +877,8 @@
         0..15)</description>
         <bitOffset>27</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR10</name>
@@ -816,6 +886,8 @@
         0..15)</description>
         <bitOffset>26</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR9</name>
@@ -823,6 +895,8 @@
         0..15)</description>
         <bitOffset>25</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR8</name>
@@ -830,6 +904,8 @@
         0..15)</description>
         <bitOffset>24</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR7</name>
@@ -837,6 +913,8 @@
         0..15)</description>
         <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR6</name>
@@ -844,6 +922,8 @@
         0..15)</description>
         <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR5</name>
@@ -851,6 +931,8 @@
         0..15)</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR4</name>
@@ -858,6 +940,8 @@
         0..15)</description>
         <bitOffset>20</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR3</name>
@@ -865,6 +949,8 @@
         0..15)</description>
         <bitOffset>19</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR2</name>
@@ -872,6 +958,8 @@
         0..15)</description>
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR1</name>
@@ -879,6 +967,8 @@
         0..15)</description>
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BR0</name>
@@ -886,6 +976,8 @@
         0..15)</description>
         <bitOffset>16</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="RESET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS15</name>
@@ -893,6 +985,15 @@
         0..15)</description>
         <bitOffset>15</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <name>SET</name>
+          <usage>write</usage>
+          <enumeratedValue>
+            <name>Set</name>
+            <description>Sets the corresponding ODRx bit</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>BS14</name>
@@ -900,6 +1001,8 @@
         0..15)</description>
         <bitOffset>14</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS13</name>
@@ -907,6 +1010,8 @@
         0..15)</description>
         <bitOffset>13</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS12</name>
@@ -914,6 +1019,8 @@
         0..15)</description>
         <bitOffset>12</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS11</name>
@@ -921,6 +1028,8 @@
         0..15)</description>
         <bitOffset>11</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS10</name>
@@ -928,6 +1037,8 @@
         0..15)</description>
         <bitOffset>10</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS9</name>
@@ -935,6 +1046,8 @@
         0..15)</description>
         <bitOffset>9</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS8</name>
@@ -942,6 +1055,8 @@
         0..15)</description>
         <bitOffset>8</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS7</name>
@@ -949,6 +1064,8 @@
         0..15)</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS6</name>
@@ -956,6 +1073,8 @@
         0..15)</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS5</name>
@@ -963,6 +1082,8 @@
         0..15)</description>
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS4</name>
@@ -970,6 +1091,8 @@
         0..15)</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS3</name>
@@ -977,6 +1100,8 @@
         0..15)</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS2</name>
@@ -984,6 +1109,8 @@
         0..15)</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS1</name>
@@ -991,6 +1118,8 @@
         0..15)</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
       <field>
         <name>BS0</name>
@@ -998,6 +1127,8 @@
         0..15)</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="SET">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
