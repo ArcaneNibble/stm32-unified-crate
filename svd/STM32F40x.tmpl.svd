@@ -25,6 +25,7 @@
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #define __HAVE_SAI
+#define __HAVE_DMA2D
 #endif
 
 #ifdef STM32F437
@@ -32,6 +33,7 @@
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #define __HAVE_SAI
+#define __HAVE_DMA2D
 #define __HAVE_CRYPTO
 #endif
 
@@ -40,6 +42,7 @@
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #define __HAVE_SAI
+#define __HAVE_DMA2D
 #endif
 
 #ifdef STM32F439
@@ -47,6 +50,7 @@
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #define __HAVE_SAI
+#define __HAVE_DMA2D
 #define __HAVE_CRYPTO
 #endif
 
@@ -1098,6 +1102,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>87</value>
       </interrupt>
 #include "sai.svd.frag"
+    </peripheral>
+#endif
+#ifdef __HAVE_DMA2D
+    <peripheral>
+      <name>DMA2D</name>
+      <baseAddress>0x4002B000</baseAddress>
+      <interrupt>
+        <name>DMA2D</name>
+        <description>DMA2D global interrupt</description>
+        <value>90</value>
+      </interrupt>
+#include "dma2d.svd.frag"
     </peripheral>
 #endif
   </peripherals>

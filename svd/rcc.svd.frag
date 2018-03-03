@@ -588,6 +588,14 @@
         <bitWidth>1</bitWidth>
       </field>
 #endif
+#ifdef __HAVE_DMA2D
+      <field>
+        <name>DMA2DRST</name>
+        <description>DMA2D reset</description>
+        <bitOffset>23</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
       <field>
         <name>DMA2RST</name>
         <description>DMA2 reset</description>
@@ -1075,6 +1083,16 @@
         <name>ETHMACEN</name>
         <description>Ethernet MAC clock enable</description>
         <bitOffset>25</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
+#ifdef __HAVE_DMA2D
+      <field>
+        <name>DMA2DEN</name>
+        <description>DMA2D clock enable</description>
+        <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="ENABLED">
         </enumeratedValues>
@@ -1717,6 +1735,16 @@
         <description>Ethernet MAC clock enable during Sleep
         mode</description>
         <bitOffset>25</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
+#ifdef __HAVE_DMA2D
+      <field>
+        <name>DMA2DLPEN</name>
+        <description>DMA2D clock enable during Sleep</description>
+        <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
