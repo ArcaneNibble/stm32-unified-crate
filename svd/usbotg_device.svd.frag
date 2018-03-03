@@ -10,9 +10,9 @@
 </addressBlock>
 <registers>
   <register>
-    <name>OTG_HS_DCFG</name>
-    <displayName>OTG_HS_DCFG</displayName>
-    <description>OTG_HS device configuration
+    <name>DCFG</name>
+    <displayName>DCFG</displayName>
+    <description>OTG device configuration
     register</description>
     <addressOffset>0x0</addressOffset>
     <size>32</size>
@@ -45,6 +45,7 @@
         <bitOffset>11</bitOffset>
         <bitWidth>2</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>PERSCHIVL</name>
         <description>Periodic scheduling
@@ -52,12 +53,13 @@
         <bitOffset>24</bitOffset>
         <bitWidth>2</bitWidth>
       </field>
+#endif
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DCTL</name>
-    <displayName>OTG_HS_DCTL</displayName>
-    <description>OTG_HS device control register</description>
+    <name>DCTL</name>
+    <displayName>DCTL</displayName>
+    <description>OTG device control register</description>
     <addressOffset>0x4</addressOffset>
     <size>32</size>
     <resetValue>0x0</resetValue>
@@ -135,9 +137,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DSTS</name>
-    <displayName>OTG_HS_DSTS</displayName>
-    <description>OTG_HS device status register</description>
+    <name>DSTS</name>
+    <displayName>DSTS</displayName>
+    <description>OTG device status register</description>
     <addressOffset>0x8</addressOffset>
     <size>32</size>
     <access>read-only</access>
@@ -171,9 +173,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPMSK</name>
-    <displayName>OTG_HS_DIEPMSK</displayName>
-    <description>OTG_HS device IN endpoint common interrupt
+    <name>DIEPMSK</name>
+    <displayName>DIEPMSK</displayName>
+    <description>OTG device IN endpoint common interrupt
     mask register</description>
     <addressOffset>0x10</addressOffset>
     <size>32</size>
@@ -222,6 +224,7 @@
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>TXFURM</name>
         <description>FIFO underrun mask</description>
@@ -234,12 +237,13 @@
         <bitOffset>9</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPMSK</name>
-    <displayName>OTG_HS_DOEPMSK</displayName>
-    <description>OTG_HS device OUT endpoint common interrupt
+    <name>DOEPMSK</name>
+    <displayName>DOEPMSK</displayName>
+    <description>OTG device OUT endpoint common interrupt
     mask register</description>
     <addressOffset>0x14</addressOffset>
     <size>32</size>
@@ -273,6 +277,7 @@
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>B2BSTUP</name>
         <description>Back-to-back SETUP packets received
@@ -292,12 +297,13 @@
         <bitOffset>9</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DAINT</name>
-    <displayName>OTG_HS_DAINT</displayName>
-    <description>OTG_HS device all endpoints interrupt
+    <name>DAINT</name>
+    <displayName>DAINT</displayName>
+    <description>OTG device all endpoints interrupt
     register</description>
     <addressOffset>0x18</addressOffset>
     <size>32</size>
@@ -320,9 +326,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DAINTMSK</name>
-    <displayName>OTG_HS_DAINTMSK</displayName>
-    <description>OTG_HS all endpoints interrupt mask
+    <name>DAINTMSK</name>
+    <displayName>DAINTMSK</displayName>
+    <description>OTG all endpoints interrupt mask
     register</description>
     <addressOffset>0x1C</addressOffset>
     <size>32</size>
@@ -344,9 +350,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DVBUSDIS</name>
-    <displayName>OTG_HS_DVBUSDIS</displayName>
-    <description>OTG_HS device VBUS discharge time
+    <name>DVBUSDIS</name>
+    <displayName>DVBUSDIS</displayName>
+    <description>OTG device VBUS discharge time
     register</description>
     <addressOffset>0x28</addressOffset>
     <size>32</size>
@@ -362,9 +368,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DVBUSPULSE</name>
-    <displayName>OTG_HS_DVBUSPULSE</displayName>
-    <description>OTG_HS device VBUS pulsing time
+    <name>DVBUSPULSE</name>
+    <displayName>DVBUSPULSE</displayName>
+    <description>OTG device VBUS pulsing time
     register</description>
     <addressOffset>0x2C</addressOffset>
     <size>32</size>
@@ -379,10 +385,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DTHRCTL</name>
-    <displayName>OTG_HS_DTHRCTL</displayName>
-    <description>OTG_HS Device threshold control
+    <name>DTHRCTL</name>
+    <displayName>DTHRCTL</displayName>
+    <description>OTG Device threshold control
     register</description>
     <addressOffset>0x30</addressOffset>
     <size>32</size>
@@ -429,10 +436,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DIEPEMPMSK</name>
-    <displayName>OTG_HS_DIEPEMPMSK</displayName>
-    <description>OTG_HS device IN endpoint FIFO empty
+    <name>DIEPEMPMSK</name>
+    <displayName>DIEPEMPMSK</displayName>
+    <description>OTG device IN endpoint FIFO empty
     interrupt mask register</description>
     <addressOffset>0x34</addressOffset>
     <size>32</size>
@@ -448,10 +456,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DEACHINT</name>
-    <displayName>OTG_HS_DEACHINT</displayName>
-    <description>OTG_HS device each endpoint interrupt
+    <name>DEACHINT</name>
+    <displayName>DEACHINT</displayName>
+    <description>OTG device each endpoint interrupt
     register</description>
     <addressOffset>0x38</addressOffset>
     <size>32</size>
@@ -474,9 +483,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DEACHINTMSK</name>
-    <displayName>OTG_HS_DEACHINTMSK</displayName>
-    <description>OTG_HS device each endpoint interrupt
+    <name>DEACHINTMSK</name>
+    <displayName>DEACHINTMSK</displayName>
+    <description>OTG device each endpoint interrupt
     register mask</description>
     <addressOffset>0x3C</addressOffset>
     <size>32</size>
@@ -500,9 +509,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPEACHMSK1</name>
-    <displayName>OTG_HS_DIEPEACHMSK1</displayName>
-    <description>OTG_HS device each in endpoint-1 interrupt
+    <name>DIEPEACHMSK1</name>
+    <displayName>DIEPEACHMSK1</displayName>
+    <description>OTG device each in endpoint-1 interrupt
     register</description>
     <addressOffset>0x40</addressOffset>
     <size>32</size>
@@ -572,9 +581,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPEACHMSK1</name>
-    <displayName>OTG_HS_DOEPEACHMSK1</displayName>
-    <description>OTG_HS device each OUT endpoint-1 interrupt
+    <name>DOEPEACHMSK1</name>
+    <displayName>DOEPEACHMSK1</displayName>
+    <description>OTG device each OUT endpoint-1 interrupt
     register</description>
     <addressOffset>0x80</addressOffset>
     <size>32</size>
@@ -655,9 +664,10 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DIEPCTL0</name>
-    <displayName>OTG_HS_DIEPCTL0</displayName>
+    <name>DIEPCTL0</name>
+    <displayName>DIEPCTL0</displayName>
     <description>OTG device endpoint-0 control
     register</description>
     <addressOffset>0x100</addressOffset>
@@ -668,7 +678,11 @@
         <name>MPSIZ</name>
         <description>Maximum packet size</description>
         <bitOffset>0</bitOffset>
+#ifdef __USBOTG_HS
         <bitWidth>11</bitWidth>
+#else
+        <bitWidth>2</bitWidth>
+#endif
         <access>read-write</access>
       </field>
       <field>
@@ -727,6 +741,7 @@
         <bitWidth>1</bitWidth>
         <access>write-only</access>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>SD0PID_SEVNFRM</name>
         <description>Set DATA0 PID</description>
@@ -741,6 +756,7 @@
         <bitWidth>1</bitWidth>
         <access>write-only</access>
       </field>
+#endif
       <field>
         <name>EPDIS</name>
         <description>Endpoint disable</description>
@@ -758,8 +774,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPCTL1</name>
-    <displayName>OTG_HS_DIEPCTL1</displayName>
+    <name>DIEPCTL1</name>
+    <displayName>DIEPCTL1</displayName>
     <description>OTG device endpoint-1 control
     register</description>
     <addressOffset>0x120</addressOffset>
@@ -860,8 +876,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPCTL2</name>
-    <displayName>OTG_HS_DIEPCTL2</displayName>
+    <name>DIEPCTL2</name>
+    <displayName>DIEPCTL2</displayName>
     <description>OTG device endpoint-2 control
     register</description>
     <addressOffset>0x140</addressOffset>
@@ -962,8 +978,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPCTL3</name>
-    <displayName>OTG_HS_DIEPCTL3</displayName>
+    <name>DIEPCTL3</name>
+    <displayName>DIEPCTL3</displayName>
     <description>OTG device endpoint-3 control
     register</description>
     <addressOffset>0x160</addressOffset>
@@ -1063,9 +1079,10 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DIEPCTL4</name>
-    <displayName>OTG_HS_DIEPCTL4</displayName>
+    <name>DIEPCTL4</name>
+    <displayName>DIEPCTL4</displayName>
     <description>OTG device endpoint-4 control
     register</description>
     <addressOffset>0x180</addressOffset>
@@ -1166,8 +1183,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPCTL5</name>
-    <displayName>OTG_HS_DIEPCTL5</displayName>
+    <name>DIEPCTL5</name>
+    <displayName>DIEPCTL5</displayName>
     <description>OTG device endpoint-5 control
     register</description>
     <addressOffset>0x1A0</addressOffset>
@@ -1268,8 +1285,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPCTL6</name>
-    <displayName>OTG_HS_DIEPCTL6</displayName>
+    <name>DIEPCTL6</name>
+    <displayName>DIEPCTL6</displayName>
     <description>OTG device endpoint-6 control
     register</description>
     <addressOffset>0x1C0</addressOffset>
@@ -1370,8 +1387,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPCTL7</name>
-    <displayName>OTG_HS_DIEPCTL7</displayName>
+    <name>DIEPCTL7</name>
+    <displayName>DIEPCTL7</displayName>
     <description>OTG device endpoint-7 control
     register</description>
     <addressOffset>0x1E0</addressOffset>
@@ -1471,9 +1488,10 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DIEPINT0</name>
-    <displayName>OTG_HS_DIEPINT0</displayName>
+    <name>DIEPINT0</name>
+    <displayName>DIEPINT0</displayName>
     <description>OTG device endpoint-0 interrupt
     register</description>
     <addressOffset>0x108</addressOffset>
@@ -1564,8 +1582,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPINT1</name>
-    <displayName>OTG_HS_DIEPINT1</displayName>
+    <name>DIEPINT1</name>
+    <displayName>DIEPINT1</displayName>
     <description>OTG device endpoint-1 interrupt
     register</description>
     <addressOffset>0x128</addressOffset>
@@ -1656,8 +1674,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPINT2</name>
-    <displayName>OTG_HS_DIEPINT2</displayName>
+    <name>DIEPINT2</name>
+    <displayName>DIEPINT2</displayName>
     <description>OTG device endpoint-2 interrupt
     register</description>
     <addressOffset>0x148</addressOffset>
@@ -1748,8 +1766,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPINT3</name>
-    <displayName>OTG_HS_DIEPINT3</displayName>
+    <name>DIEPINT3</name>
+    <displayName>DIEPINT3</displayName>
     <description>OTG device endpoint-3 interrupt
     register</description>
     <addressOffset>0x168</addressOffset>
@@ -1839,9 +1857,10 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DIEPINT4</name>
-    <displayName>OTG_HS_DIEPINT4</displayName>
+    <name>DIEPINT4</name>
+    <displayName>DIEPINT4</displayName>
     <description>OTG device endpoint-4 interrupt
     register</description>
     <addressOffset>0x188</addressOffset>
@@ -1932,8 +1951,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPINT5</name>
-    <displayName>OTG_HS_DIEPINT5</displayName>
+    <name>DIEPINT5</name>
+    <displayName>DIEPINT5</displayName>
     <description>OTG device endpoint-5 interrupt
     register</description>
     <addressOffset>0x1A8</addressOffset>
@@ -2024,8 +2043,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPINT6</name>
-    <displayName>OTG_HS_DIEPINT6</displayName>
+    <name>DIEPINT6</name>
+    <displayName>DIEPINT6</displayName>
     <description>OTG device endpoint-6 interrupt
     register</description>
     <addressOffset>0x1C8</addressOffset>
@@ -2116,8 +2135,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPINT7</name>
-    <displayName>OTG_HS_DIEPINT7</displayName>
+    <name>DIEPINT7</name>
+    <displayName>DIEPINT7</displayName>
     <description>OTG device endpoint-7 interrupt
     register</description>
     <addressOffset>0x1E8</addressOffset>
@@ -2207,10 +2226,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DIEPTSIZ0</name>
-    <displayName>OTG_HS_DIEPTSIZ0</displayName>
-    <description>OTG_HS device IN endpoint 0 transfer size
+    <name>DIEPTSIZ0</name>
+    <displayName>DIEPTSIZ0</displayName>
+    <description>OTG device IN endpoint 0 transfer size
     register</description>
     <addressOffset>0x110</addressOffset>
     <size>32</size>
@@ -2231,10 +2251,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DIEPDMA1</name>
-    <displayName>OTG_HS_DIEPDMA1</displayName>
-    <description>OTG_HS device endpoint-1 DMA address
+    <name>DIEPDMA1</name>
+    <displayName>DIEPDMA1</displayName>
+    <description>OTG device endpoint-1 DMA address
     register</description>
     <addressOffset>0x114</addressOffset>
     <size>32</size>
@@ -2250,9 +2271,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPDMA2</name>
-    <displayName>OTG_HS_DIEPDMA2</displayName>
-    <description>OTG_HS device endpoint-2 DMA address
+    <name>DIEPDMA2</name>
+    <displayName>DIEPDMA2</displayName>
+    <description>OTG device endpoint-2 DMA address
     register</description>
     <addressOffset>0x134</addressOffset>
     <size>32</size>
@@ -2268,9 +2289,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPDMA3</name>
-    <displayName>OTG_HS_DIEPDMA3</displayName>
-    <description>OTG_HS device endpoint-3 DMA address
+    <name>DIEPDMA3</name>
+    <displayName>DIEPDMA3</displayName>
+    <description>OTG device endpoint-3 DMA address
     register</description>
     <addressOffset>0x154</addressOffset>
     <size>32</size>
@@ -2286,9 +2307,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPDMA4</name>
-    <displayName>OTG_HS_DIEPDMA4</displayName>
-    <description>OTG_HS device endpoint-4 DMA address
+    <name>DIEPDMA4</name>
+    <displayName>DIEPDMA4</displayName>
+    <description>OTG device endpoint-4 DMA address
     register</description>
     <addressOffset>0x174</addressOffset>
     <size>32</size>
@@ -2304,9 +2325,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPDMA5</name>
-    <displayName>OTG_HS_DIEPDMA5</displayName>
-    <description>OTG_HS device endpoint-5 DMA address
+    <name>DIEPDMA5</name>
+    <displayName>DIEPDMA5</displayName>
+    <description>OTG device endpoint-5 DMA address
     register</description>
     <addressOffset>0x194</addressOffset>
     <size>32</size>
@@ -2321,10 +2342,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DTXFSTS0</name>
-    <displayName>OTG_HS_DTXFSTS0</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO
+    <name>DTXFSTS0</name>
+    <displayName>DTXFSTS0</displayName>
+    <description>OTG device IN endpoint transmit FIFO
     status register</description>
     <addressOffset>0x118</addressOffset>
     <size>32</size>
@@ -2341,9 +2363,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DTXFSTS1</name>
-    <displayName>OTG_HS_DTXFSTS1</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO
+    <name>DTXFSTS1</name>
+    <displayName>DTXFSTS1</displayName>
+    <description>OTG device IN endpoint transmit FIFO
     status register</description>
     <addressOffset>0x138</addressOffset>
     <size>32</size>
@@ -2360,9 +2382,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DTXFSTS2</name>
-    <displayName>OTG_HS_DTXFSTS2</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO
+    <name>DTXFSTS2</name>
+    <displayName>DTXFSTS2</displayName>
+    <description>OTG device IN endpoint transmit FIFO
     status register</description>
     <addressOffset>0x158</addressOffset>
     <size>32</size>
@@ -2379,9 +2401,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DTXFSTS3</name>
-    <displayName>OTG_HS_DTXFSTS3</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO
+    <name>DTXFSTS3</name>
+    <displayName>DTXFSTS3</displayName>
+    <description>OTG device IN endpoint transmit FIFO
     status register</description>
     <addressOffset>0x178</addressOffset>
     <size>32</size>
@@ -2397,10 +2419,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DTXFSTS4</name>
-    <displayName>OTG_HS_DTXFSTS4</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO
+    <name>DTXFSTS4</name>
+    <displayName>DTXFSTS4</displayName>
+    <description>OTG device IN endpoint transmit FIFO
     status register</description>
     <addressOffset>0x198</addressOffset>
     <size>32</size>
@@ -2417,9 +2440,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DTXFSTS5</name>
-    <displayName>OTG_HS_DTXFSTS5</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO
+    <name>DTXFSTS5</name>
+    <displayName>DTXFSTS5</displayName>
+    <description>OTG device IN endpoint transmit FIFO
     status register</description>
     <addressOffset>0x1B8</addressOffset>
     <size>32</size>
@@ -2435,10 +2458,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DIEPTSIZ1</name>
-    <displayName>OTG_HS_DIEPTSIZ1</displayName>
-    <description>OTG_HS device endpoint transfer size
+    <name>DIEPTSIZ1</name>
+    <displayName>DIEPTSIZ1</displayName>
+    <description>OTG device endpoint transfer size
     register</description>
     <addressOffset>0x130</addressOffset>
     <size>32</size>
@@ -2466,9 +2490,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPTSIZ2</name>
-    <displayName>OTG_HS_DIEPTSIZ2</displayName>
-    <description>OTG_HS device endpoint transfer size
+    <name>DIEPTSIZ2</name>
+    <displayName>DIEPTSIZ2</displayName>
+    <description>OTG device endpoint transfer size
     register</description>
     <addressOffset>0x150</addressOffset>
     <size>32</size>
@@ -2496,9 +2520,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPTSIZ3</name>
-    <displayName>OTG_HS_DIEPTSIZ3</displayName>
-    <description>OTG_HS device endpoint transfer size
+    <name>DIEPTSIZ3</name>
+    <displayName>DIEPTSIZ3</displayName>
+    <description>OTG device endpoint transfer size
     register</description>
     <addressOffset>0x170</addressOffset>
     <size>32</size>
@@ -2525,10 +2549,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DIEPTSIZ4</name>
-    <displayName>OTG_HS_DIEPTSIZ4</displayName>
-    <description>OTG_HS device endpoint transfer size
+    <name>DIEPTSIZ4</name>
+    <displayName>DIEPTSIZ4</displayName>
+    <description>OTG device endpoint transfer size
     register</description>
     <addressOffset>0x190</addressOffset>
     <size>32</size>
@@ -2556,9 +2581,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPTSIZ5</name>
-    <displayName>OTG_HS_DIEPTSIZ5</displayName>
-    <description>OTG_HS device endpoint transfer size
+    <name>DIEPTSIZ5</name>
+    <displayName>DIEPTSIZ5</displayName>
+    <description>OTG device endpoint transfer size
     register</description>
     <addressOffset>0x1B0</addressOffset>
     <size>32</size>
@@ -2585,10 +2610,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DOEPCTL0</name>
-    <displayName>OTG_HS_DOEPCTL0</displayName>
-    <description>OTG_HS device control OUT endpoint 0 control
+    <name>DOEPCTL0</name>
+    <displayName>DOEPCTL0</displayName>
+    <description>OTG device control OUT endpoint 0 control
     register</description>
     <addressOffset>0x300</addressOffset>
     <size>32</size>
@@ -2667,8 +2693,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPCTL1</name>
-    <displayName>OTG_HS_DOEPCTL1</displayName>
+    <name>DOEPCTL1</name>
+    <displayName>DOEPCTL1</displayName>
     <description>OTG device endpoint-1 control
     register</description>
     <addressOffset>0x320</addressOffset>
@@ -2771,8 +2797,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPCTL2</name>
-    <displayName>OTG_HS_DOEPCTL2</displayName>
+    <name>DOEPCTL2</name>
+    <displayName>DOEPCTL2</displayName>
     <description>OTG device endpoint-2 control
     register</description>
     <addressOffset>0x340</addressOffset>
@@ -2875,8 +2901,8 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPCTL3</name>
-    <displayName>OTG_HS_DOEPCTL3</displayName>
+    <name>DOEPCTL3</name>
+    <displayName>DOEPCTL3</displayName>
     <description>OTG device endpoint-3 control
     register</description>
     <addressOffset>0x360</addressOffset>
@@ -2979,9 +3005,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT0</name>
-    <displayName>OTG_HS_DOEPINT0</displayName>
-    <description>OTG_HS device endpoint-0 interrupt
+    <name>DOEPINT0</name>
+    <displayName>DOEPINT0</displayName>
+    <description>OTG device endpoint-0 interrupt
     register</description>
     <addressOffset>0x308</addressOffset>
     <size>32</size>
@@ -3031,9 +3057,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT1</name>
-    <displayName>OTG_HS_DOEPINT1</displayName>
-    <description>OTG_HS device endpoint-1 interrupt
+    <name>DOEPINT1</name>
+    <displayName>DOEPINT1</displayName>
+    <description>OTG device endpoint-1 interrupt
     register</description>
     <addressOffset>0x328</addressOffset>
     <size>32</size>
@@ -3083,9 +3109,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT2</name>
-    <displayName>OTG_HS_DOEPINT2</displayName>
-    <description>OTG_HS device endpoint-2 interrupt
+    <name>DOEPINT2</name>
+    <displayName>DOEPINT2</displayName>
+    <description>OTG device endpoint-2 interrupt
     register</description>
     <addressOffset>0x348</addressOffset>
     <size>32</size>
@@ -3135,9 +3161,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT3</name>
-    <displayName>OTG_HS_DOEPINT3</displayName>
-    <description>OTG_HS device endpoint-3 interrupt
+    <name>DOEPINT3</name>
+    <displayName>DOEPINT3</displayName>
+    <description>OTG device endpoint-3 interrupt
     register</description>
     <addressOffset>0x368</addressOffset>
     <size>32</size>
@@ -3186,10 +3212,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DOEPINT4</name>
-    <displayName>OTG_HS_DOEPINT4</displayName>
-    <description>OTG_HS device endpoint-4 interrupt
+    <name>DOEPINT4</name>
+    <displayName>DOEPINT4</displayName>
+    <description>OTG device endpoint-4 interrupt
     register</description>
     <addressOffset>0x388</addressOffset>
     <size>32</size>
@@ -3239,9 +3266,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT5</name>
-    <displayName>OTG_HS_DOEPINT5</displayName>
-    <description>OTG_HS device endpoint-5 interrupt
+    <name>DOEPINT5</name>
+    <displayName>DOEPINT5</displayName>
+    <description>OTG device endpoint-5 interrupt
     register</description>
     <addressOffset>0x3A8</addressOffset>
     <size>32</size>
@@ -3291,9 +3318,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT6</name>
-    <displayName>OTG_HS_DOEPINT6</displayName>
-    <description>OTG_HS device endpoint-6 interrupt
+    <name>DOEPINT6</name>
+    <displayName>DOEPINT6</displayName>
+    <description>OTG device endpoint-6 interrupt
     register</description>
     <addressOffset>0x3C8</addressOffset>
     <size>32</size>
@@ -3343,9 +3370,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPINT7</name>
-    <displayName>OTG_HS_DOEPINT7</displayName>
-    <description>OTG_HS device endpoint-7 interrupt
+    <name>DOEPINT7</name>
+    <displayName>DOEPINT7</displayName>
+    <description>OTG device endpoint-7 interrupt
     register</description>
     <addressOffset>0x3E8</addressOffset>
     <size>32</size>
@@ -3394,10 +3421,11 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DOEPTSIZ0</name>
-    <displayName>OTG_HS_DOEPTSIZ0</displayName>
-    <description>OTG_HS device endpoint-1 transfer size
+    <name>DOEPTSIZ0</name>
+    <displayName>DOEPTSIZ0</displayName>
+    <description>OTG device endpoint-1 transfer size
     register</description>
     <addressOffset>0x310</addressOffset>
     <size>32</size>
@@ -3425,9 +3453,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPTSIZ1</name>
-    <displayName>OTG_HS_DOEPTSIZ1</displayName>
-    <description>OTG_HS device endpoint-2 transfer size
+    <name>DOEPTSIZ1</name>
+    <displayName>DOEPTSIZ1</displayName>
+    <description>OTG device endpoint-2 transfer size
     register</description>
     <addressOffset>0x330</addressOffset>
     <size>32</size>
@@ -3456,9 +3484,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPTSIZ2</name>
-    <displayName>OTG_HS_DOEPTSIZ2</displayName>
-    <description>OTG_HS device endpoint-3 transfer size
+    <name>DOEPTSIZ2</name>
+    <displayName>DOEPTSIZ2</displayName>
+    <description>OTG device endpoint-3 transfer size
     register</description>
     <addressOffset>0x350</addressOffset>
     <size>32</size>
@@ -3487,9 +3515,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DOEPTSIZ3</name>
-    <displayName>OTG_HS_DOEPTSIZ3</displayName>
-    <description>OTG_HS device endpoint-4 transfer size
+    <name>DOEPTSIZ3</name>
+    <displayName>DOEPTSIZ3</displayName>
+    <description>OTG device endpoint-4 transfer size
     register</description>
     <addressOffset>0x370</addressOffset>
     <size>32</size>
@@ -3517,10 +3545,11 @@
       </field>
     </fields>
   </register>
+#ifdef __USBOTG_HS
   <register>
-    <name>OTG_HS_DOEPTSIZ4</name>
-    <displayName>OTG_HS_DOEPTSIZ4</displayName>
-    <description>OTG_HS device endpoint-5 transfer size
+    <name>DOEPTSIZ4</name>
+    <displayName>DOEPTSIZ4</displayName>
+    <description>OTG device endpoint-5 transfer size
     register</description>
     <addressOffset>0x390</addressOffset>
     <size>32</size>
@@ -3548,4 +3577,6 @@
       </field>
     </fields>
   </register>
+#endif
 </registers>
+#undef __USBOTG_HS
