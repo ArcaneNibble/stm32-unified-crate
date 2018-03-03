@@ -320,6 +320,16 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <name>GPIOC</name>
       <baseAddress>0x40020800</baseAddress>
     </peripheral>
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
+    <peripheral derivedFrom="GPIOI">
+      <name>GPIOJ</name>
+      <baseAddress>0x40022400</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="GPIOI">
+      <name>GPIOK</name>
+      <baseAddress>0x40022800</baseAddress>
+    </peripheral>
+#endif
     <peripheral>
       <name>GPIOB</name>
       <baseAddress>0x40020400</baseAddress>

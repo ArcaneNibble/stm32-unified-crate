@@ -668,6 +668,20 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
+      <field>
+        <name>GPIOKRST</name>
+        <description>IO port K reset</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>GPIOJRST</name>
+        <description>IO port J reset</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1211,6 +1225,24 @@
         <enumeratedValues derivedFrom="ENABLED">
         </enumeratedValues>
       </field>
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
+      <field>
+        <name>GPIOKEN</name>
+        <description>IO port K clock enable</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>GPIOJEN</name>
+        <description>IO port J clock enable</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1894,6 +1926,26 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#if defined(STM32F427) || defined(STM32F437) || defined(STM32F429) || defined(STM32F439)
+      <field>
+        <name>GPIOJLPEN</name>
+        <description>IO port J clock enable during Sleep
+        mode</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+      <field>
+        <name>GPIOKLPEN</name>
+        <description>IO port K clock enable during Sleep
+        mode</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>
