@@ -1,19 +1,27 @@
+#ifdef STM32F405
+#define __HAVE_FSMC
+#endif
+
 #ifdef STM32F407
+#define __HAVE_FSMC
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #endif
 
 #ifdef STM32F415
+#define __HAVE_FSMC
 #define __HAVE_CRYPTO
 #endif
 
 #ifdef STM32F417
+#define __HAVE_FSMC
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #define __HAVE_CRYPTO
 #endif
 
 #ifdef STM32F427
+#define __HAVE_FMC
 #define __HAVE_ETHERNET
 #define __HAVE_DCMI
 #endif
@@ -114,17 +122,31 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
 #include "dcmi.svd.frag"
     </peripheral>
 #endif
+#ifdef __HAVE_FSMC
     <peripheral>
       <name>FSMC</name>
-      <groupName>FSMC</groupName>
       <baseAddress>0xA0000000</baseAddress>
       <interrupt>
         <name>FSMC</name>
         <description>FSMC global interrupt</description>
         <value>48</value>
       </interrupt>
-#include "fsmc.svd.frag"
+#include "fmc.svd.frag"
     </peripheral>
+#endif
+#ifdef __HAVE_FMC
+    <peripheral>
+      <name>FMC</name>
+      <baseAddress>0xA0000000</baseAddress>
+      <interrupt>
+        <name>FMC</name>
+        <description>FMC global interrupt</description>
+        <value>48</value>
+      </interrupt>
+#define __FMC_HAVE_SDRAM
+#include "fmc.svd.frag"
+    </peripheral>
+#endif
     <peripheral>
       <name>DBG</name>
       <baseAddress>0xE0042000</baseAddress>

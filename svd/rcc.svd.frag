@@ -691,6 +691,7 @@
     <access>read-write</access>
     <resetValue>0x00000000</resetValue>
     <fields>
+#ifdef __HAVE_FSMC
       <field>
         <name>FSMCRST</name>
         <description>Flexible static memory controller module
@@ -698,6 +699,16 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
+#ifdef __HAVE_FMC
+      <field>
+        <name>FMCRST</name>
+        <description>Flexible static memory controller module
+        reset</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1210,6 +1221,7 @@
     <access>read-write</access>
     <resetValue>0x00000000</resetValue>
     <fields>
+#ifdef __HAVE_FSMC
       <field>
         <name>FSMCEN</name>
         <description>Flexible static memory controller module
@@ -1219,6 +1231,18 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#endif
+#ifdef __HAVE_FMC
+      <field>
+        <name>FMCEN</name>
+        <description>Flexible static memory controller module
+        clock enable</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -1863,6 +1887,7 @@
     <access>read-write</access>
     <resetValue>0x00000001</resetValue>
     <fields>
+#ifdef __HAVE_FSMC
       <field>
         <name>FSMCLPEN</name>
         <description>Flexible static memory controller module
@@ -1872,6 +1897,18 @@
         <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
         </enumeratedValues>
       </field>
+#endif
+#ifdef __HAVE_FMC
+      <field>
+        <name>FMCLPEN</name>
+        <description>Flexible static memory controller module
+        clock enable during Sleep mode</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues derivedFrom="AHB1ENR.OTGHSULPIEN.ENABLED">
+        </enumeratedValues>
+      </field>
+#endif
     </fields>
   </register>
   <register>

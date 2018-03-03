@@ -1,5 +1,8 @@
+#ifdef __FMC_HAVE_SDRAM
+<description>Flexible memory controller</description>
+#else
 <description>Flexible static memory controller</description>
-<groupName>FSMC</groupName>
+#endif
 <addressBlock>
   <offset>0x0</offset>
   <size>0x400</size>
@@ -16,6 +19,14 @@
     <access>read-write</access>
     <resetValue>0x000030D0</resetValue>
     <fields>
+#ifdef __FMC_HAVE_SDRAM
+      <field>
+        <name>CCLKEN</name>
+        <description>CCLKEN</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#endif
       <field>
         <name>CBURSTRW</name>
         <description>CBURSTRW</description>
@@ -1437,4 +1448,358 @@
       </field>
     </fields>
   </register>
+#ifdef __FMC_HAVE_SDRAM
+  <register>
+    <name>SDCR1</name>
+    <displayName>SDCR1</displayName>
+    <description>SDRAM Control Register 1</description>
+    <addressOffset>0x140</addressOffset>
+    <size>0x20</size>
+    <access>read-write</access>
+    <resetValue>0x000002D0</resetValue>
+    <fields>
+      <field>
+        <name>NC</name>
+        <description>Number of column address
+        bits</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>NR</name>
+        <description>Number of row address bits</description>
+        <bitOffset>2</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>MWID</name>
+        <description>Memory data bus width</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>NB</name>
+        <description>Number of internal banks</description>
+        <bitOffset>6</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>CAS</name>
+        <description>CAS latency</description>
+        <bitOffset>7</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>WP</name>
+        <description>Write protection</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>SDCLK</name>
+        <description>SDRAM clock configuration</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>RBURST</name>
+        <description>Burst read</description>
+        <bitOffset>12</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>RPIPE</name>
+        <description>Read pipe</description>
+        <bitOffset>13</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>SDCR2</name>
+    <displayName>SDCR2</displayName>
+    <description>SDRAM Control Register 2</description>
+    <addressOffset>0x144</addressOffset>
+    <size>0x20</size>
+    <access>read-write</access>
+    <resetValue>0x000002D0</resetValue>
+    <fields>
+      <field>
+        <name>NC</name>
+        <description>Number of column address
+        bits</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>NR</name>
+        <description>Number of row address bits</description>
+        <bitOffset>2</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>MWID</name>
+        <description>Memory data bus width</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>NB</name>
+        <description>Number of internal banks</description>
+        <bitOffset>6</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>CAS</name>
+        <description>CAS latency</description>
+        <bitOffset>7</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>WP</name>
+        <description>Write protection</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>SDCLK</name>
+        <description>SDRAM clock configuration</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>RBURST</name>
+        <description>Burst read</description>
+        <bitOffset>12</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>RPIPE</name>
+        <description>Read pipe</description>
+        <bitOffset>13</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>SDTR1</name>
+    <displayName>SDTR1</displayName>
+    <description>SDRAM Timing register 1</description>
+    <addressOffset>0x148</addressOffset>
+    <size>0x20</size>
+    <access>read-write</access>
+    <resetValue>0x0FFFFFFF</resetValue>
+    <fields>
+      <field>
+        <name>TMRD</name>
+        <description>Load Mode Register to
+        Active</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TXSR</name>
+        <description>Exit self-refresh delay</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRAS</name>
+        <description>Self refresh time</description>
+        <bitOffset>8</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRC</name>
+        <description>Row cycle delay</description>
+        <bitOffset>12</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TWR</name>
+        <description>Recovery delay</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRP</name>
+        <description>Row precharge delay</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRCD</name>
+        <description>Row to column delay</description>
+        <bitOffset>24</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>SDTR2</name>
+    <displayName>SDTR2</displayName>
+    <description>SDRAM Timing register 2</description>
+    <addressOffset>0x14C</addressOffset>
+    <size>0x20</size>
+    <access>read-write</access>
+    <resetValue>0x0FFFFFFF</resetValue>
+    <fields>
+      <field>
+        <name>TMRD</name>
+        <description>Load Mode Register to
+        Active</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TXSR</name>
+        <description>Exit self-refresh delay</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRAS</name>
+        <description>Self refresh time</description>
+        <bitOffset>8</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRC</name>
+        <description>Row cycle delay</description>
+        <bitOffset>12</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TWR</name>
+        <description>Recovery delay</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRP</name>
+        <description>Row precharge delay</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>TRCD</name>
+        <description>Row to column delay</description>
+        <bitOffset>24</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>SDCMR</name>
+    <displayName>SDCMR</displayName>
+    <description>SDRAM Command Mode register</description>
+    <addressOffset>0x150</addressOffset>
+    <size>0x20</size>
+    <resetValue>0x00000000</resetValue>
+    <fields>
+      <field>
+        <name>MODE</name>
+        <description>Command mode</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>3</bitWidth>
+        <access>write-only</access>
+      </field>
+      <field>
+        <name>CTB2</name>
+        <description>Command target bank 2</description>
+        <bitOffset>3</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>write-only</access>
+      </field>
+      <field>
+        <name>CTB1</name>
+        <description>Command target bank 1</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>write-only</access>
+      </field>
+      <field>
+        <name>NRFS</name>
+        <description>Number of Auto-refresh</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>4</bitWidth>
+        <access>read-write</access>
+      </field>
+      <field>
+        <name>MRD</name>
+        <description>Mode Register definition</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>13</bitWidth>
+        <access>read-write</access>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>SDRTR</name>
+    <displayName>SDRTR</displayName>
+    <description>SDRAM Refresh Timer register</description>
+    <addressOffset>0x154</addressOffset>
+    <size>0x20</size>
+    <resetValue>0x00000000</resetValue>
+    <fields>
+      <field>
+        <name>CRE</name>
+        <description>Clear Refresh error flag</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>write-only</access>
+      </field>
+      <field>
+        <name>COUNT</name>
+        <description>Refresh Timer Count</description>
+        <bitOffset>1</bitOffset>
+        <bitWidth>13</bitWidth>
+        <access>read-write</access>
+      </field>
+      <field>
+        <name>REIE</name>
+        <description>RES Interrupt Enable</description>
+        <bitOffset>14</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>read-write</access>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>SDSR</name>
+    <displayName>SDSR</displayName>
+    <description>SDRAM Status register</description>
+    <addressOffset>0x158</addressOffset>
+    <size>0x20</size>
+    <access>read-only</access>
+    <resetValue>0x00000000</resetValue>
+    <fields>
+      <field>
+        <name>RE</name>
+        <description>Refresh error flag</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>MODES1</name>
+        <description>Status Mode for Bank 1</description>
+        <bitOffset>1</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>MODES2</name>
+        <description>Status Mode for Bank 2</description>
+        <bitOffset>3</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>BUSY</name>
+        <description>Busy status</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+    </fields>
+  </register>
+#endif
 </registers>
+#undef __FMC_HAVE_SDRAM
