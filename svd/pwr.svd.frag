@@ -66,6 +66,49 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>LPUDS</name>
+        <description>Low-Power Regulator Low Voltage in
+        deepsleep</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>MRUDS</name>
+        <description>Main regulator low voltage in deepsleep
+        mode</description>
+        <bitOffset>11</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>VOS</name>
+        <description>Regulator voltage scaling output
+        selection</description>
+        <bitOffset>14</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+      <field>
+        <name>ODEN</name>
+        <description>Over-drive enable</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>ODSWEN</name>
+        <description>Over-drive switching
+        enabled</description>
+        <bitOffset>17</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>UDEN</name>
+        <description>Under-drive enable in stop
+        mode</description>
+        <bitOffset>18</bitOffset>
+        <bitWidth>2</bitWidth>
+      </field>
+#endif
     </fields>
   </register>
   <register>
@@ -126,6 +169,30 @@
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>ODRDY</name>
+        <description>Over-drive mode ready</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>ODSWRDY</name>
+        <description>Over-drive mode switching
+        ready</description>
+        <bitOffset>17</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>UDRDY</name>
+        <description>Under-drive ready flag</description>
+        <bitOffset>18</bitOffset>
+        <bitWidth>2</bitWidth>
+        <access>read-write</access>
+      </field>
+#endif
     </fields>
   </register>
 </registers>

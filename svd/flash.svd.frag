@@ -174,6 +174,26 @@
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#if defined(STM32F427)
+      <field>
+        <name>MER</name>
+        <description>Mass Erase of sectors 0 to 11</description>
+        <bitOffset>2</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+      <field>
+        <name>SNB</name>
+        <description>Sector number</description>
+        <bitOffset>3</bitOffset>
+        <bitWidth>5</bitWidth>
+      </field>
+      <field>
+        <name>MER1</name>
+        <description>Mass Erase of sectors 12 to 23</description>
+        <bitOffset>15</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+#else
       <field>
         <name>MER</name>
         <description>Mass Erase</description>
@@ -186,6 +206,7 @@
         <bitOffset>3</bitOffset>
         <bitWidth>4</bitWidth>
       </field>
+#endif
       <field>
         <name>PSIZE</name>
         <description>Program size</description>
@@ -226,7 +247,7 @@
     <addressOffset>0x14</addressOffset>
     <size>0x20</size>
     <access>read-write</access>
-    <resetValue>0x00000014</resetValue>
+    <resetValue>0x0FFFAAED</resetValue>
     <fields>
       <field>
         <name>OPTLOCK</name>
@@ -280,4 +301,24 @@
       </field>
     </fields>
   </register>
+#if defined(STM32F427)
+  <register>
+    <name>OPTCR1</name>
+    <displayName>OPTCR1</displayName>
+    <description>Flash option control register
+    1</description>
+    <addressOffset>0x18</addressOffset>
+    <size>0x20</size>
+    <access>read-write</access>
+    <resetValue>0x0FFF0000</resetValue>
+    <fields>
+      <field>
+        <name>nWRP</name>
+        <description>Not write protect</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>12</bitWidth>
+      </field>
+    </fields>
+  </register>
+#endif
 </registers>

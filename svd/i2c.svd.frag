@@ -452,4 +452,29 @@
       </field>
     </fields>
   </register>
+#if defined(STM32F427)
+  <register>
+    <name>FLTR</name>
+    <displayName>FLTR</displayName>
+    <description>I2C FLTR register</description>
+    <addressOffset>0x24</addressOffset>
+    <size>0x20</size>
+    <access>read-write</access>
+    <resetValue>0x0000</resetValue>
+    <fields>
+      <field>
+        <name>DNF</name>
+        <description>Digital noise filter</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>4</bitWidth>
+      </field>
+      <field>
+        <name>ANOFF</name>
+        <description>Analog noise filter OFF</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>1</bitWidth>
+      </field>
+    </fields>
+  </register>
+#endif
 </registers>
