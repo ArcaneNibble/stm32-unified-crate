@@ -1,8 +1,12 @@
+#ifdef __USBOTG_HS
 <description>USB on the go high speed</description>
+#else
+<description>USB on the go full speed</description>
+#endif
 <registers>
   <register>
-    <name>PCGCR</name>
-    <displayName>PCGCR</displayName>
+    <name>PCGCCTL</name>
+    <displayName>PCGCCTL</displayName>
     <description>Power and clock gating control
     register</description>
     <addressOffset>0x0</addressOffset>

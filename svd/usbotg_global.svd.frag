@@ -1,9 +1,13 @@
+#ifdef __USBOTG_HS
 <description>USB on the go high speed</description>
+#else
+<description>USB on the go full speed</description>
+#endif
 <registers>
   <register>
-    <name>OTG_HS_GOTGCTL</name>
-    <displayName>OTG_HS_GOTGCTL</displayName>
-    <description>OTG_HS control and status
+    <name>GOTGCTL</name>
+    <displayName>GOTGCTL</displayName>
+    <description>OTG control and status
     register</description>
     <addressOffset>0x0</addressOffset>
     <size>32</size>
@@ -82,9 +86,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GOTGINT</name>
-    <displayName>OTG_HS_GOTGINT</displayName>
-    <description>OTG_HS interrupt register</description>
+    <name>GOTGINT</name>
+    <displayName>GOTGINT</displayName>
+    <description>OTG interrupt register</description>
     <addressOffset>0x4</addressOffset>
     <size>32</size>
     <access>read-write</access>
@@ -131,9 +135,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GAHBCFG</name>
-    <displayName>OTG_HS_GAHBCFG</displayName>
-    <description>OTG_HS AHB configuration
+    <name>GAHBCFG</name>
+    <displayName>GAHBCFG</displayName>
+    <description>OTG AHB configuration
     register</description>
     <addressOffset>0x8</addressOffset>
     <size>32</size>
@@ -146,6 +150,7 @@
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>HBSTLEN</name>
         <description>Burst length/type</description>
@@ -158,6 +163,7 @@
         <bitOffset>5</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>TXFELVL</name>
         <description>TxFIFO empty level</description>
@@ -174,9 +180,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GUSBCFG</name>
-    <displayName>OTG_HS_GUSBCFG</displayName>
-    <description>OTG_HS USB configuration
+    <name>GUSBCFG</name>
+    <displayName>GUSBCFG</displayName>
+    <description>OTG USB configuration
     register</description>
     <addressOffset>0xC</addressOffset>
     <size>32</size>
@@ -218,6 +224,7 @@
         <bitWidth>4</bitWidth>
         <access>read-write</access>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>PHYLPCS</name>
         <description>PHY Low-power clock select</description>
@@ -291,6 +298,7 @@
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
+#endif
       <field>
         <name>FHMOD</name>
         <description>Forced host mode</description>
@@ -315,9 +323,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GRSTCTL</name>
-    <displayName>OTG_HS_GRSTCTL</displayName>
-    <description>OTG_HS reset register</description>
+    <name>GRSTCTL</name>
+    <displayName>GRSTCTL</displayName>
+    <description>OTG reset register</description>
     <addressOffset>0x10</addressOffset>
     <size>32</size>
     <resetValue>0x20000000</resetValue>
@@ -364,6 +372,7 @@
         <bitWidth>5</bitWidth>
         <access>read-write</access>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>DMAREQ</name>
         <description>DMA request signal</description>
@@ -371,6 +380,7 @@
         <bitWidth>1</bitWidth>
         <access>read-only</access>
       </field>
+#endif
       <field>
         <name>AHBIDL</name>
         <description>AHB master idle</description>
@@ -381,9 +391,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GINTSTS</name>
-    <displayName>OTG_HS_GINTSTS</displayName>
-    <description>OTG_HS core interrupt register</description>
+    <name>GINTSTS</name>
+    <displayName>GINTSTS</displayName>
+    <description>OTG core interrupt register</description>
     <addressOffset>0x14</addressOffset>
     <size>32</size>
     <resetValue>0x04000020</resetValue>
@@ -439,7 +449,7 @@
         <access>read-only</access>
       </field>
       <field>
-        <name>BOUTNAKEFF</name>
+        <name>GOUTNAKEFF</name>
         <description>Global OUT NAK effective</description>
         <bitOffset>7</bitOffset>
         <bitWidth>1</bitWidth>
@@ -512,13 +522,14 @@
         <access>read-write</access>
       </field>
       <field>
-        <name>PXFR_INCOMPISOOUT</name>
+        <name>IPXFR_INCOMPISOOUT</name>
         <description>Incomplete periodic
         transfer</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>DATAFSUSP</name>
         <description>Data fetch suspended</description>
@@ -526,6 +537,7 @@
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
+#endif
       <field>
         <name>HPRTINT</name>
         <description>Host port interrupt</description>
@@ -581,9 +593,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GINTMSK</name>
-    <displayName>OTG_HS_GINTMSK</displayName>
-    <description>OTG_HS interrupt mask register</description>
+    <name>GINTMSK</name>
+    <displayName>GINTMSK</displayName>
+    <description>OTG interrupt mask register</description>
     <addressOffset>0x18</addressOffset>
     <size>32</size>
     <resetValue>0x0</resetValue>
@@ -718,13 +730,14 @@
         <access>read-write</access>
       </field>
       <field>
-        <name>PXFRM_IISOOXFRM</name>
+        <name>IPXFRM_IISOOXFRM</name>
         <description>Incomplete periodic transfer
         mask</description>
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>FSUSPM</name>
         <description>Data fetch suspended mask</description>
@@ -732,6 +745,7 @@
         <bitWidth>1</bitWidth>
         <access>read-write</access>
       </field>
+#endif
       <field>
         <name>PRTIM</name>
         <description>Host port interrupt mask</description>
@@ -789,9 +803,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GRXSTSR_Host</name>
-    <displayName>OTG_HS_GRXSTSR_Host</displayName>
-    <description>OTG_HS Receive status debug read register
+    <name>GRXSTSR_Host</name>
+    <displayName>GRXSTSR_Host</displayName>
+    <description>OTG Receive status debug read register
     (host mode)</description>
     <addressOffset>0x1C</addressOffset>
     <size>32</size>
@@ -825,9 +839,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GRXSTSP_Host</name>
-    <displayName>OTG_HS_GRXSTSP_Host</displayName>
-    <description>OTG_HS status read and pop register (host
+    <name>GRXSTSP_Host</name>
+    <displayName>GRXSTSP_Host</displayName>
+    <description>OTG status read and pop register (host
     mode)</description>
     <addressOffset>0x20</addressOffset>
     <size>32</size>
@@ -861,9 +875,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GRXFSIZ</name>
-    <displayName>OTG_HS_GRXFSIZ</displayName>
-    <description>OTG_HS Receive FIFO size
+    <name>GRXFSIZ</name>
+    <displayName>GRXFSIZ</displayName>
+    <description>OTG Receive FIFO size
     register</description>
     <addressOffset>0x24</addressOffset>
     <size>32</size>
@@ -879,9 +893,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GNPTXFSIZ_Host</name>
-    <displayName>OTG_HS_GNPTXFSIZ_Host</displayName>
-    <description>OTG_HS nonperiodic transmit FIFO size
+    <name>GNPTXFSIZ_Host</name>
+    <displayName>GNPTXFSIZ_Host</displayName>
+    <description>OTG nonperiodic transmit FIFO size
     register (host mode)</description>
     <addressOffset>0x28</addressOffset>
     <size>32</size>
@@ -904,11 +918,11 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_TX0FSIZ_Peripheral</name>
-    <displayName>OTG_HS_TX0FSIZ_Peripheral</displayName>
+    <name>TX0FSIZ_Peripheral</name>
+    <displayName>TX0FSIZ_Peripheral</displayName>
     <description>Endpoint 0 transmit FIFO size (peripheral
     mode)</description>
-    <alternateRegister>OTG_HS_GNPTXFSIZ_Host</alternateRegister>
+    <alternateRegister>GNPTXFSIZ_Host</alternateRegister>
     <addressOffset>0x28</addressOffset>
     <size>32</size>
     <access>read-write</access>
@@ -930,9 +944,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GNPTXSTS</name>
-    <displayName>OTG_HS_GNPTXSTS</displayName>
-    <description>OTG_HS nonperiodic transmit FIFO/queue
+    <name>GNPTXSTS</name>
+    <displayName>GNPTXSTS</displayName>
+    <description>OTG nonperiodic transmit FIFO/queue
     status register</description>
     <addressOffset>0x2C</addressOffset>
     <size>32</size>
@@ -963,9 +977,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GCCFG</name>
-    <displayName>OTG_HS_GCCFG</displayName>
-    <description>OTG_HS general core configuration
+    <name>GCCFG</name>
+    <displayName>GCCFG</displayName>
+    <description>OTG general core configuration
     register</description>
     <addressOffset>0x38</addressOffset>
     <size>32</size>
@@ -978,6 +992,7 @@
         <bitOffset>16</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#ifdef __USBOTG_HS
       <field>
         <name>I2CPADEN</name>
         <description>Enable I2C bus connection for the
@@ -985,6 +1000,7 @@
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
       </field>
+#endif
       <field>
         <name>VBUSASEN</name>
         <description>Enable the VBUS sensing
@@ -1014,9 +1030,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_CID</name>
-    <displayName>OTG_HS_CID</displayName>
-    <description>OTG_HS core ID register</description>
+    <name>CID</name>
+    <displayName>CID</displayName>
+    <description>OTG core ID register</description>
     <addressOffset>0x3C</addressOffset>
     <size>32</size>
     <access>read-write</access>
@@ -1031,9 +1047,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_HPTXFSIZ</name>
-    <displayName>OTG_HS_HPTXFSIZ</displayName>
-    <description>OTG_HS Host periodic transmit FIFO size
+    <name>HPTXFSIZ</name>
+    <displayName>HPTXFSIZ</displayName>
+    <description>OTG Host periodic transmit FIFO size
     register</description>
     <addressOffset>0x100</addressOffset>
     <size>32</size>
@@ -1056,9 +1072,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPTXF1</name>
-    <displayName>OTG_HS_DIEPTXF1</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
+    <name>DIEPTXF1</name>
+    <displayName>DIEPTXF1</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
     register</description>
     <addressOffset>0x104</addressOffset>
     <size>32</size>
@@ -1081,9 +1097,9 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPTXF2</name>
-    <displayName>OTG_HS_DIEPTXF2</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
+    <name>DIEPTXF2</name>
+    <displayName>DIEPTXF2</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
     register</description>
     <addressOffset>0x108</addressOffset>
     <size>32</size>
@@ -1106,9 +1122,110 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_DIEPTXF3</name>
-    <displayName>OTG_HS_DIEPTXF3</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
+    <name>DIEPTXF3</name>
+    <displayName>DIEPTXF3</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
+    register</description>
+    <addressOffset>0x10C</addressOffset>
+    <size>32</size>
+    <access>read-write</access>
+    <resetValue>0x02000400</resetValue>
+    <fields>
+      <field>
+        <name>INEPTXSA</name>
+        <description>IN endpoint FIFOx transmit RAM start
+        address</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+      <field>
+        <name>INEPTXFD</name>
+        <description>IN endpoint TxFIFO depth</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+    </fields>
+  </register>
+#ifdef __USBOTG_HS
+  <register>
+    <name>DIEPTXF4</name>
+    <displayName>DIEPTXF4</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
+    register</description>
+    <addressOffset>0x110</addressOffset>
+    <size>32</size>
+    <access>read-write</access>
+    <resetValue>0x02000400</resetValue>
+    <fields>
+      <field>
+        <name>INEPTXSA</name>
+        <description>IN endpoint FIFOx transmit RAM start
+        address</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+      <field>
+        <name>INEPTXFD</name>
+        <description>IN endpoint TxFIFO depth</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>DIEPTXF5</name>
+    <displayName>DIEPTXF5</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
+    register</description>
+    <addressOffset>0x114</addressOffset>
+    <size>32</size>
+    <access>read-write</access>
+    <resetValue>0x02000400</resetValue>
+    <fields>
+      <field>
+        <name>INEPTXSA</name>
+        <description>IN endpoint FIFOx transmit RAM start
+        address</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+      <field>
+        <name>INEPTXFD</name>
+        <description>IN endpoint TxFIFO depth</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>DIEPTXF6</name>
+    <displayName>DIEPTXF6</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
+    register</description>
+    <addressOffset>0x118</addressOffset>
+    <size>32</size>
+    <access>read-write</access>
+    <resetValue>0x02000400</resetValue>
+    <fields>
+      <field>
+        <name>INEPTXSA</name>
+        <description>IN endpoint FIFOx transmit RAM start
+        address</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+      <field>
+        <name>INEPTXFD</name>
+        <description>IN endpoint TxFIFO depth</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>16</bitWidth>
+      </field>
+    </fields>
+  </register>
+  <register>
+    <name>DIEPTXF7</name>
+    <displayName>DIEPTXF7</displayName>
+    <description>OTG device IN endpoint transmit FIFO size
     register</description>
     <addressOffset>0x11C</addressOffset>
     <size>32</size>
@@ -1130,112 +1247,13 @@
       </field>
     </fields>
   </register>
+#endif
   <register>
-    <name>OTG_HS_DIEPTXF4</name>
-    <displayName>OTG_HS_DIEPTXF4</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
-    register</description>
-    <addressOffset>0x120</addressOffset>
-    <size>32</size>
-    <access>read-write</access>
-    <resetValue>0x02000400</resetValue>
-    <fields>
-      <field>
-        <name>INEPTXSA</name>
-        <description>IN endpoint FIFOx transmit RAM start
-        address</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-      <field>
-        <name>INEPTXFD</name>
-        <description>IN endpoint TxFIFO depth</description>
-        <bitOffset>16</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-    </fields>
-  </register>
-  <register>
-    <name>OTG_HS_DIEPTXF5</name>
-    <displayName>OTG_HS_DIEPTXF5</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
-    register</description>
-    <addressOffset>0x124</addressOffset>
-    <size>32</size>
-    <access>read-write</access>
-    <resetValue>0x02000400</resetValue>
-    <fields>
-      <field>
-        <name>INEPTXSA</name>
-        <description>IN endpoint FIFOx transmit RAM start
-        address</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-      <field>
-        <name>INEPTXFD</name>
-        <description>IN endpoint TxFIFO depth</description>
-        <bitOffset>16</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-    </fields>
-  </register>
-  <register>
-    <name>OTG_HS_DIEPTXF6</name>
-    <displayName>OTG_HS_DIEPTXF6</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
-    register</description>
-    <addressOffset>0x128</addressOffset>
-    <size>32</size>
-    <access>read-write</access>
-    <resetValue>0x02000400</resetValue>
-    <fields>
-      <field>
-        <name>INEPTXSA</name>
-        <description>IN endpoint FIFOx transmit RAM start
-        address</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-      <field>
-        <name>INEPTXFD</name>
-        <description>IN endpoint TxFIFO depth</description>
-        <bitOffset>16</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-    </fields>
-  </register>
-  <register>
-    <name>OTG_HS_DIEPTXF7</name>
-    <displayName>OTG_HS_DIEPTXF7</displayName>
-    <description>OTG_HS device IN endpoint transmit FIFO size
-    register</description>
-    <addressOffset>0x12C</addressOffset>
-    <size>32</size>
-    <access>read-write</access>
-    <resetValue>0x02000400</resetValue>
-    <fields>
-      <field>
-        <name>INEPTXSA</name>
-        <description>IN endpoint FIFOx transmit RAM start
-        address</description>
-        <bitOffset>0</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-      <field>
-        <name>INEPTXFD</name>
-        <description>IN endpoint TxFIFO depth</description>
-        <bitOffset>16</bitOffset>
-        <bitWidth>16</bitWidth>
-      </field>
-    </fields>
-  </register>
-  <register>
-    <name>OTG_HS_GRXSTSR_Peripheral</name>
-    <displayName>OTG_HS_GRXSTSR_Peripheral</displayName>
-    <description>OTG_HS Receive status debug read register
+    <name>GRXSTSR_Peripheral</name>
+    <displayName>GRXSTSR_Peripheral</displayName>
+    <description>OTG Receive status debug read register
     (peripheral mode mode)</description>
-    <alternateRegister>OTG_HS_GRXSTSR_Host</alternateRegister>
+    <alternateRegister>GRXSTSR_Host</alternateRegister>
     <addressOffset>0x1C</addressOffset>
     <size>32</size>
     <access>read-only</access>
@@ -1274,11 +1292,11 @@
     </fields>
   </register>
   <register>
-    <name>OTG_HS_GRXSTSP_Peripheral</name>
-    <displayName>OTG_HS_GRXSTSP_Peripheral</displayName>
-    <description>OTG_HS status read and pop register
+    <name>GRXSTSP_Peripheral</name>
+    <displayName>GRXSTSP_Peripheral</displayName>
+    <description>OTG status read and pop register
     (peripheral mode)</description>
-    <alternateRegister>OTG_HS_GRXSTSP_Host</alternateRegister>
+    <alternateRegister>GRXSTSP_Host</alternateRegister>
     <addressOffset>0x20</addressOffset>
     <size>32</size>
     <access>read-only</access>
@@ -1317,3 +1335,4 @@
     </fields>
   </register>
 </registers>
+#undef __USBOTG_HS
