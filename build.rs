@@ -9,6 +9,8 @@ fn main() {
     let svd = std::path::Path::new(&root_dir).join("svd");
     let files = std::fs::read_dir(svd).unwrap();
 
+    let mut frags = Vec::new();
+
     for file in files {
         let path = file.expect("failed to get path").path();
         let path_str = path.as_os_str().to_str().unwrap();
@@ -21,8 +23,18 @@ fn main() {
             }).collect::<String>().to_ascii_uppercase();
 
             write!(f, r#"
-                static {}: &'static [u8] = include_bytes!("{}");
+                const {}: &'static [u8] = include_bytes!("{}");
                 "#, id_string, path.to_str().unwrap()).unwrap();
+
+            if path_str.ends_with(".frag") {
+                frags.push(id_string);
+            }
         }
     }
+
+    write!(f, r#"const ALL_FRAGS: &'static [&'static [u8]] = &["#).unwrap();
+    for frag in frags {
+        write!(f, r#"&{},"#, frag).unwrap();
+    }
+    write!(f, r#"];"#).unwrap();
 }
