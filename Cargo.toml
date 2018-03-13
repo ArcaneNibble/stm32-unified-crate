@@ -1,8 +1,20 @@
 [package]
 name = "stm32"
-version = "0.0.0"
+version = "0.0.1"
 authors = ["Robert Ou <rqou@robertou.com>"]
 description = "Unified device support crate for all STM32 microcontrollers (WIP)"
-license = "BSD-2-Clause"
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["arm", "cortex-m", "stm32", "svd2rust"]
+license = "MIT OR Apache-2.0"
 
 [dependencies]
+bare-metal = "0.1.0"
+cortex-m = "0.4.0"
+vcell = "0.1.0"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.3.0"
+
+[features]
+rt = ["cortex-m-rt"]
