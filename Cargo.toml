@@ -6,3 +6,4 @@ description = "Unified device support crate for all STM32 microcontrollers (WIP)
 categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["arm", "cortex-m", "stm32", "svd2rust"]
 license = "MIT OR Apache-2.0"
+build = "build.rs"
