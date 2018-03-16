@@ -3,8 +3,9 @@ name = "stm32"
 version = "0.0.1"
 authors = ["Robert Ou <rqou@robertou.com>"]
 description = "Unified device support crate for all STM32 microcontrollers (WIP)"
-categories = ["embedded", "hardware-support", "no-std"]
+categories = ["embedded", "hardware-support"]
 keywords = ["arm", "cortex-m", "stm32", "svd2rust"]
+readme = "README.md"
 license-file = "LICENSE"
 build = "build.rs"
 
