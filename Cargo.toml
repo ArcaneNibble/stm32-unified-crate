@@ -8,6 +8,8 @@ keywords = ["arm", "cortex-m", "stm32", "svd2rust"]
 readme = "README.md"
 license-file = "LICENSE"
 build = "build.rs"
+documentation = "https://docs.rs/stm32"
+repository = "https://github.com/rqou/stm32-unified-crate"
 
 [dependencies]
 tempdir = "0.3"
