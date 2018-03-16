@@ -7,3 +7,6 @@ categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["arm", "cortex-m", "stm32", "svd2rust"]
 license = "MIT OR Apache-2.0"
 build = "build.rs"
+
+[dependencies]
+tempdir = "0.3"

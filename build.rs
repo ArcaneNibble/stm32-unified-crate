@@ -17,7 +17,8 @@ fn main() {
         if path_str.ends_with(".tmpl.svd") || path_str.ends_with(".frag") {
             let path = path.canonicalize().unwrap();
 
-            let id_string = path.file_name().unwrap().to_str().unwrap().chars().map(|x| match x {
+            let filename = path.file_name().unwrap().to_str().unwrap().to_owned();
+            let id_string = filename.chars().map(|x| match x {
                 'A'...'Z' | 'a'...'z' | '0'...'9' => x,
                 _ => '_',
             }).collect::<String>().to_ascii_uppercase();
@@ -27,14 +28,14 @@ fn main() {
                 "#, id_string, path.to_str().unwrap()).unwrap();
 
             if path_str.ends_with(".frag") {
-                frags.push(id_string);
+                frags.push((id_string, filename));
             }
         }
     }
 
-    write!(f, r#"const ALL_FRAGS: &'static [&'static [u8]] = &["#).unwrap();
-    for frag in frags {
-        write!(f, r#"&{},"#, frag).unwrap();
+    write!(f, r#"const ALL_FRAGS: &'static [(&'static [u8], &'static str)] = &["#).unwrap();
+    for (frag_id, frag_fn) in frags {
+        write!(f, r#"(&{}, "{}"),"#, frag_id, frag_fn).unwrap();
     }
     write!(f, r#"];"#).unwrap();
 }
