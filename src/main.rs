@@ -11,12 +11,8 @@ use std::path::Path;
 use std::process::{Command, Stdio};
 
 fn extract_all_frags(dir: &Path) -> io::Result<()> {
-    println!("{:?}", dir);
-
     for &(frag_bytes, frag_fn) in ALL_FRAGS {
-        // println!("{:?}", x);
         let filename = dir.join(frag_fn);
-        println!("{:?}", filename);
         let mut f = File::create(filename)?;
         f.write_all(frag_bytes)?;
     }
@@ -39,20 +35,17 @@ fn match_dev_name(devname: &str) -> Option<(&'static [u8], &'static str)> {
 }
 
 fn main() {
-    println!("Hello world!");
-
     let argv = env::args().collect::<Vec<_>>();
-    println!("{:?}", argv);
 
     if argv.len() != 2 {
         println!("Usage: {} device-name", argv[0]);
-        return;
+        std::process::exit(1);
     }
 
     let tmpl_info = match_dev_name(&argv[1]);
     if tmpl_info.is_none() {
         println!("Unsupported device");
-        return;
+        std::process::exit(1);
     }
     let (tmpl_bytes, tmpl_def) = tmpl_info.unwrap();
 
@@ -61,7 +54,6 @@ fn main() {
 
     let svd_in_filename = dir.path().join("svd.tmpl");
     {
-        println!("{:?}", svd_in_filename);
         let mut f = File::create(&svd_in_filename).unwrap();
         f.write_all(tmpl_bytes).unwrap();
     }
@@ -78,7 +70,7 @@ fn main() {
         .status().unwrap();
     if !preprocess_result.success() {
         println!("Preprocessing failed");
-        return;
+        std::process::exit(1);
     }
 
     // Run svd2rust
@@ -87,7 +79,7 @@ fn main() {
         .output().unwrap();
     if !svd2rust_output.status.success() {
         println!("svd2rust failed");
-        return;
+        std::process::exit(1);
     }
 
     // Run rustfmt
@@ -103,11 +95,8 @@ fn main() {
     if !(rustfmt_output.status.success() ||
         (rustfmt_output.status.code().is_some() && rustfmt_output.status.code().unwrap() == 3)) {
         println!("rustfmt failed");
-        return;
+        std::process::exit(1);
     }
 
     io::stdout().write(&rustfmt_output.stdout).unwrap();
-
-    // XXX
-    // dir.into_path();
 }
