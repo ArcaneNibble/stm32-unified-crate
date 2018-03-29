@@ -128,12 +128,24 @@ transmitter</description>
         <description>mantissa of USARTDIV</description>
         <bitOffset>4</bitOffset>
         <bitWidth>12</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>4095</maximum>
+          </range>
+        </writeConstraint>
       </field>
       <field>
         <name>DIV_Fraction</name>
         <description>fraction of USARTDIV</description>
         <bitOffset>0</bitOffset>
         <bitWidth>4</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>15</maximum>
+          </range>
+        </writeConstraint>
       </field>
     </fields>
   </register>
@@ -259,6 +271,29 @@ transmitter</description>
         <description>STOP bits</description>
         <bitOffset>12</bitOffset>
         <bitWidth>2</bitWidth>
+        <enumeratedValues>
+          <name>STOP</name>
+          <enumeratedValue>
+            <name>1</name>
+            <description>1</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>0_5</name>
+            <description>0.5</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>2</name>
+            <description>2</description>
+            <value>2</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>1_5</name>
+            <description>1.5</description>
+            <value>3</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
 #ifndef __USART_ASYNCHRONOUS_ONLY
       <field>
@@ -304,6 +339,12 @@ transmitter</description>
         <description>Address of the USART node</description>
         <bitOffset>0</bitOffset>
         <bitWidth>4</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>15</maximum>
+          </range>
+        </writeConstraint>
       </field>
     </fields>
   </register>
