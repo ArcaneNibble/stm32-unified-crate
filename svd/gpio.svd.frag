@@ -1279,6 +1279,89 @@
         bit y (y = 0..7)</description>
         <bitOffset>28</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues>
+          <name>AF</name>
+          <enumeratedValue>
+            <name>AF0</name>
+            <description>AF0</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF1</name>
+            <description>AF1</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF2</name>
+            <description>AF2</description>
+            <value>2</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF3</name>
+            <description>AF3</description>
+            <value>3</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF4</name>
+            <description>AF4</description>
+            <value>4</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF5</name>
+            <description>AF5</description>
+            <value>5</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF6</name>
+            <description>AF6</description>
+            <value>6</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF7</name>
+            <description>AF7</description>
+            <value>7</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF8</name>
+            <description>AF8</description>
+            <value>8</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF9</name>
+            <description>AF9</description>
+            <value>9</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF10</name>
+            <description>AF10</description>
+            <value>10</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF11</name>
+            <description>AF11</description>
+            <value>11</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF12</name>
+            <description>AF12</description>
+            <value>12</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF13</name>
+            <description>AF13</description>
+            <value>13</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF14</name>
+            <description>AF14</description>
+            <value>14</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>AF15</name>
+            <description>AF15</description>
+            <value>15</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL6</name>
@@ -1286,6 +1369,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>24</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL5</name>
@@ -1293,6 +1378,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>20</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL4</name>
@@ -1300,6 +1387,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>16</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL3</name>
@@ -1307,6 +1396,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>12</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL2</name>
@@ -1314,6 +1405,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>8</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL1</name>
@@ -1321,6 +1414,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>4</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRL0</name>
@@ -1328,6 +1423,8 @@
         bit y (y = 0..7)</description>
         <bitOffset>0</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AF">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
@@ -1347,6 +1444,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>28</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH14</name>
@@ -1354,6 +1453,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>24</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH13</name>
@@ -1361,6 +1462,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>20</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH12</name>
@@ -1368,6 +1471,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>16</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH11</name>
@@ -1375,6 +1480,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>12</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH10</name>
@@ -1382,6 +1489,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>8</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH9</name>
@@ -1389,6 +1498,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>4</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
       <field>
         <name>AFRH8</name>
@@ -1396,6 +1507,8 @@
         bit y (y = 8..15)</description>
         <bitOffset>0</bitOffset>
         <bitWidth>4</bitWidth>
+        <enumeratedValues derivedFrom="AFRL.AFRL7.AF">
+        </enumeratedValues>
       </field>
     </fields>
   </register>
