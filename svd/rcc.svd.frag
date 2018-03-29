@@ -396,6 +396,14 @@
         <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues>
+          <name>CLEAR</name>
+          <enumeratedValue>
+            <name>Clear</name>
+            <description>Clear.</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>PLLI2SRDYC</name>
@@ -404,6 +412,8 @@
         <bitOffset>21</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues derivedFrom="CLEAR">
+        </enumeratedValues>
       </field>
       <field>
         <name>PLLRDYC</name>
@@ -412,6 +422,8 @@
         <bitOffset>20</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues derivedFrom="CLEAR">
+        </enumeratedValues>
       </field>
       <field>
         <name>HSERDYC</name>
@@ -419,6 +431,8 @@
         <bitOffset>19</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues derivedFrom="CLEAR">
+        </enumeratedValues>
       </field>
       <field>
         <name>HSIRDYC</name>
@@ -426,6 +440,8 @@
         <bitOffset>18</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues derivedFrom="CLEAR">
+        </enumeratedValues>
       </field>
       <field>
         <name>LSERDYC</name>
@@ -433,6 +449,8 @@
         <bitOffset>17</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues derivedFrom="CLEAR">
+        </enumeratedValues>
       </field>
       <field>
         <name>LSIRDYC</name>
@@ -440,6 +458,8 @@
         <bitOffset>16</bitOffset>
         <bitWidth>1</bitWidth>
         <access>write-only</access>
+        <enumeratedValues derivedFrom="CLEAR">
+        </enumeratedValues>
       </field>
       <field>
         <name>PLLI2SRDYIE</name>
