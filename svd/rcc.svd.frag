@@ -116,36 +116,16 @@
     <resetValue>0x24003010</resetValue>
     <fields>
       <field>
-        <name>PLLQ3</name>
-        <description>Main PLL (PLL) division factor for USB
-        OTG FS, SDIO and random number generator
-        clocks</description>
-        <bitOffset>27</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLQ2</name>
-        <description>Main PLL (PLL) division factor for USB
-        OTG FS, SDIO and random number generator
-        clocks</description>
-        <bitOffset>26</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLQ1</name>
-        <description>Main PLL (PLL) division factor for USB
-        OTG FS, SDIO and random number generator
-        clocks</description>
-        <bitOffset>25</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLQ0</name>
-        <description>Main PLL (PLL) division factor for USB
-        OTG FS, SDIO and random number generator
-        clocks</description>
+        <name>PLLQ</name>
+        <description>Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks</description>
         <bitOffset>24</bitOffset>
-        <bitWidth>1</bitWidth>
+        <bitWidth>4</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>15</maximum>
+          </range>
+        </writeConstraint>
       </field>
       <field>
         <name>PLLSRC</name>
@@ -153,125 +133,72 @@
         entry clock source</description>
         <bitOffset>22</bitOffset>
         <bitWidth>1</bitWidth>
+        <enumeratedValues>
+          <name>PLLSRC</name>
+          <enumeratedValue>
+            <name>HSI</name>
+            <description>HSI</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>HSE</name>
+            <description>HSE</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
-        <name>PLLP1</name>
-        <description>Main PLL (PLL) division factor for main
-        system clock</description>
-        <bitOffset>17</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLP0</name>
-        <description>Main PLL (PLL) division factor for main
-        system clock</description>
+        <name>PLLP</name>
+        <description>Main PLL (PLL) division factor for main system clock</description>
         <bitOffset>16</bitOffset>
-        <bitWidth>1</bitWidth>
+        <bitWidth>2</bitWidth>
+        <enumeratedValues>
+          <name>PLLP</name>
+          <enumeratedValue>
+            <name>2</name>
+            <description>2</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>4</name>
+            <description>4</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>6</name>
+            <description>6</description>
+            <value>2</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>8</name>
+            <description>8</description>
+            <value>3</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
-        <name>PLLN8</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>14</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN7</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>13</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN6</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>12</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN5</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>11</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN4</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>10</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN3</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>9</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN2</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>8</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN1</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
-        <bitOffset>7</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLN0</name>
-        <description>Main PLL (PLL) multiplication factor for
-        VCO</description>
+        <name>PLLN</name>
+        <description>Main PLL (PLL) multiplication factor for VCO</description>
         <bitOffset>6</bitOffset>
-        <bitWidth>1</bitWidth>
+        <bitWidth>9</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>511</maximum>
+          </range>
+        </writeConstraint>
       </field>
       <field>
-        <name>PLLM5</name>
-        <description>Division factor for the main PLL (PLL)
-        and audio PLL (PLLI2S) input clock</description>
-        <bitOffset>5</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLM4</name>
-        <description>Division factor for the main PLL (PLL)
-        and audio PLL (PLLI2S) input clock</description>
-        <bitOffset>4</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLM3</name>
-        <description>Division factor for the main PLL (PLL)
-        and audio PLL (PLLI2S) input clock</description>
-        <bitOffset>3</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLM2</name>
-        <description>Division factor for the main PLL (PLL)
-        and audio PLL (PLLI2S) input clock</description>
-        <bitOffset>2</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLM1</name>
-        <description>Division factor for the main PLL (PLL)
-        and audio PLL (PLLI2S) input clock</description>
-        <bitOffset>1</bitOffset>
-        <bitWidth>1</bitWidth>
-      </field>
-      <field>
-        <name>PLLM0</name>
-        <description>Division factor for the main PLL (PLL)
-        and audio PLL (PLLI2S) input clock</description>
+        <name>PLLM</name>
+        <description>Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock</description>
         <bitOffset>0</bitOffset>
-        <bitWidth>1</bitWidth>
+        <bitWidth>6</bitWidth>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>63</maximum>
+          </range>
+        </writeConstraint>
       </field>
     </fields>
   </register>
@@ -290,6 +217,29 @@
         <bitOffset>30</bitOffset>
         <bitWidth>2</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>MCO2</name>
+          <enumeratedValue>
+            <name>SYSCLK</name>
+            <description>SYSCLK</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>PLLI2S</name>
+            <description>PLLI2S</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>HSE</name>
+            <description>HSE</description>
+            <value>2</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>PLL</name>
+            <description>PLL</description>
+            <value>3</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>MCO2PRE</name>
@@ -297,6 +247,34 @@
         <bitOffset>27</bitOffset>
         <bitWidth>3</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>MCOPRE</name>
+          <enumeratedValue>
+            <name>0</name>
+            <description>0</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>2</name>
+            <description>2</description>
+            <value>4</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>3</name>
+            <description>3</description>
+            <value>5</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>4</name>
+            <description>4</description>
+            <value>6</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>5</name>
+            <description>5</description>
+            <value>7</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>MCO1PRE</name>
@@ -304,6 +282,8 @@
         <bitOffset>24</bitOffset>
         <bitWidth>3</bitWidth>
         <access>read-write</access>
+        <enumeratedValues derivedFrom="MCOPRE">
+        </enumeratedValues>
       </field>
       <field>
         <name>I2SSRC</name>
@@ -311,6 +291,19 @@
         <bitOffset>23</bitOffset>
         <bitWidth>1</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>I2SSRC</name>
+          <enumeratedValue>
+            <name>PLLI2S</name>
+            <description>PLLI2S</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>External</name>
+            <description>External</description>
+            <value>1</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>MCO1</name>
@@ -319,6 +312,29 @@
         <bitOffset>21</bitOffset>
         <bitWidth>2</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>MCO1</name>
+          <enumeratedValue>
+            <name>HSI</name>
+            <description>HSI</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>LSE</name>
+            <description>LSE</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>HSE</name>
+            <description>HSE</description>
+            <value>2</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>PLL</name>
+            <description>PLL</description>
+            <value>3</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>RTCPRE</name>
@@ -327,6 +343,12 @@
         <bitOffset>16</bitOffset>
         <bitWidth>5</bitWidth>
         <access>read-write</access>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>31</maximum>
+          </range>
+        </writeConstraint>
       </field>
       <field>
         <name>PPRE2</name>
@@ -335,6 +357,34 @@
         <bitOffset>13</bitOffset>
         <bitWidth>3</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>PPRE</name>
+          <enumeratedValue>
+            <name>1</name>
+            <description>1</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>2</name>
+            <description>2</description>
+            <value>4</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>4</name>
+            <description>4</description>
+            <value>5</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>8</name>
+            <description>8</description>
+            <value>6</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>16</name>
+            <description>16</description>
+            <value>7</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
         <name>PPRE1</name>
@@ -343,6 +393,8 @@
         <bitOffset>10</bitOffset>
         <bitWidth>3</bitWidth>
         <access>read-write</access>
+        <enumeratedValues derivedFrom="PPRE">
+        </enumeratedValues>
       </field>
       <field>
         <name>HPRE</name>
@@ -350,34 +402,88 @@
         <bitOffset>4</bitOffset>
         <bitWidth>4</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>HPRE</name>
+          <enumeratedValue>
+            <name>1</name>
+            <description>1</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>2</name>
+            <description>2</description>
+            <value>8</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>4</name>
+            <description>4</description>
+            <value>9</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>8</name>
+            <description>8</description>
+            <value>10</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>16</name>
+            <description>16</description>
+            <value>11</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>64</name>
+            <description>64</description>
+            <value>12</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>128</name>
+            <description>128</description>
+            <value>13</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>256</name>
+            <description>256</description>
+            <value>14</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>512</name>
+            <description>512</description>
+            <value>15</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
       <field>
-        <name>SWS1</name>
-        <description>System clock switch status</description>
-        <bitOffset>3</bitOffset>
-        <bitWidth>1</bitWidth>
-        <access>read-only</access>
-      </field>
-      <field>
-        <name>SWS0</name>
+        <name>SWS</name>
         <description>System clock switch status</description>
         <bitOffset>2</bitOffset>
-        <bitWidth>1</bitWidth>
+        <bitWidth>2</bitWidth>
         <access>read-only</access>
+        <enumeratedValues derivedFrom="SW">
+        </enumeratedValues>
       </field>
       <field>
-        <name>SW1</name>
-        <description>System clock switch</description>
-        <bitOffset>1</bitOffset>
-        <bitWidth>1</bitWidth>
-        <access>read-write</access>
-      </field>
-      <field>
-        <name>SW0</name>
+        <name>SW</name>
         <description>System clock switch</description>
         <bitOffset>0</bitOffset>
-        <bitWidth>1</bitWidth>
+        <bitWidth>2</bitWidth>
         <access>read-write</access>
+        <enumeratedValues>
+          <name>SW</name>
+          <enumeratedValue>
+            <name>HSI</name>
+            <description>HSI</description>
+            <value>0</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>HSE</name>
+            <description>HSE</description>
+            <value>1</value>
+          </enumeratedValue>
+          <enumeratedValue>
+            <name>PLL</name>
+            <description>PLL</description>
+            <value>2</value>
+          </enumeratedValue>
+        </enumeratedValues>
       </field>
     </fields>
   </register>

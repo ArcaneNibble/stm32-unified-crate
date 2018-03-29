@@ -20,6 +20,12 @@
         <bitOffset>0</bitOffset>
         <bitWidth>3</bitWidth>
         <access>read-write</access>
+        <writeConstraint>
+          <range>
+            <minimum>0</minimum>
+            <maximum>7</maximum>
+          </range>
+        </writeConstraint>
       </field>
       <field>
         <name>PRFTEN</name>
